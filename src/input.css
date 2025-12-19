@@ -47,7 +47,7 @@
 @layer components {
 	.container {
 		/* 預設寬度 100%，水平置中 */
-		@apply max-w-7xl mx-auto;
+		@apply max-w-7xl mx-auto px-4;
 	}
 
 	/* 按鈕 */
@@ -60,8 +60,7 @@
 	}
 
 	.btn-outline-light {
-		@apply border-2 border-white text-white px-8 py-4 rounded-full font-bold
-         hover:bg-white/10 transition-standard;
+		@apply border-2 border-white text-white px-8 py-4 rounded-full font-bold hover:bg-white/10 transition-standard;
 	}
 
 	/* 特色卡片 */
@@ -79,9 +78,97 @@
 		@apply sticky top-0 z-50 bg-navbar-bg border-b border-navbar-border shadow-elevation-1 h-20 backdrop-blur-md;
 	}
 
-	
+	/* == */
+	/* 公告欄與通用卡片 */
+	.card-md3 {
+		@apply bg-white rounded-2xl p-6 shadow-elevation-1 hover:shadow-elevation-2 transition-standard;
+	}
+
+	/* MD3 風格輸入框 */
+	.input-field {
+		@apply w-full bg-transparent border border-outline rounded-lg px-4 py-3 outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-standard text-on-surface placeholder:text-gray-400;
+	}
+
+	.label-md3 {
+		@apply block text-sm font-medium mb-2 text-secondary;
+	}
+
+	/* 產品價格標籤 */
+	.price-original {
+		@apply text-gray-400 line-through text-sm;
+	}
+	.price-sale {
+		@apply text-primary font-bold text-2xl;
+	}
+
+	/* 標籤徽章 */
+	.badge {
+		@apply px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider;
+	}
+
+
+	/* ==== */
+	/* 旋轉木馬容器：隱藏捲軸並啟用對齊 */
+    .carousel-container {
+        @apply flex overflow-x-auto snap-x snap-mandatory scroll-smooth;
+        scrollbar-width: none; /* Firefox */
+    }
+    .carousel-container::-webkit-scrollbar {
+        display: none; /* Chrome/Safari */
+    }
+    
+    /* 旋轉木馬卡片：對齊點 */
+    .carousel-item {
+        @apply snap-start shrink-0;
+    }
+
+    /* 明治大學風格：關鍵字標籤 */
+    .keyword-tag {
+        @apply px-4 py-2 bg-white border border-outline/30 rounded-full text-sm 
+               hover:bg-primary hover:text-white hover:border-primary transition-standard cursor-pointer;
+    }
+
+    /* 學科/類別卡片 */
+    .dept-card {
+        @apply border-l-4 border-primary bg-white p-6 shadow-elevation-1 
+               hover:shadow-elevation-2 hover:-translate-y-1 transition-standard;
+    }
+
+	/* == */
+	/* FAQ 手風琴效果 */
+    .faq-item {
+        @apply border-b border-container last:border-0;
+    }
+    
+    .faq-question {
+        @apply flex justify-between items-center w-full py-6 text-left font-bold text-lg 
+               hover:text-primary transition-standard cursor-pointer;
+    }
+
+    .faq-answer {
+        @apply max-h-0 overflow-hidden transition-all duration-300 ease-in-out text-secondary leading-relaxed;
+    }
+
+    /* 當細節展開時的類別 (配合簡單 JS) */
+    .faq-item.active .faq-answer {
+        @apply max-h-96 pb-6;
+    }
+    .faq-item.active .faq-icon {
+        @apply rotate-180;
+    }
+
+    /* 職人卡片特殊樣式 */
+    .expert-card {
+        @apply relative overflow-hidden rounded-2xl bg-white shadow-elevation-1 transition-standard hover:shadow-elevation-2;
+    }
+
+    .expert-info-overlay {
+        @apply absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent 
+               opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-standard 
+               flex flex-col justify-end p-6 text-white;
+    }
 }
 
 @utility transition-standard {
-  transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
 }
