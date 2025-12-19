@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@theme {
+	/* 1. 顏色 */
+	--color-primary: #6750a4;
+	--color-on-primary: #ffffff;
+	--color-secondary: #625b71;
+	--color-surface: #fef7ff;
+	--color-on-surface: #1d1b20;
+	--color-outline: #79747e;
+	--color-container: #f3edf7;
+
+	--color-navbar-bg: color-mix(
+		in oklab,
+		var(--color-white) /* #fff = #ffffff */ 80%,
+		transparent
+	);
+	--color-navbar-border: var(--color-gray-100)
+		/* oklch(96.7% 0.003 264.542) = #f3f4f6 */;
+
+	/* 2. 圓角 */
+	--radius-lg: 28px;
+
+	/* 3. 陰影 (解決 elevation-1/2 報錯) */
+	/* 在 v4 定義 --shadow-xxx 會自動產生 .shadow-xxx 類別 */
+	--shadow-elevation-1: 0px 1px 3px 1px rgba(0, 0, 0, 0.15),
+		0px 1px 2px 0px rgba(0, 0, 0, 0.3);
+	--shadow-elevation-2: 0px 2px 6px 2px rgba(0, 0, 0, 0.15),
+		0px 1px 2px 0px rgba(0, 0, 0, 0.3);
+
+	/* 4. 字體與間距 */
+	--font-sans: "Noto Sans TC", sans-serif;
+	--spacing-pc: 1540px;
+
+	/* 5. 動畫效果 */
+	--transition-standard: all 0.3s ease-in-out;
+}
+
+/* 基礎設定 */
+@layer base {
+	body {
+		@apply bg-surface text-on-surface antialiased font-sans;
+	}
+}
+
+/* 元件設定 */
+@layer components {
+	.container {
+		/* 預設寬度 100%，水平置中 */
+		@apply max-w-7xl mx-auto;
+	}
+
+	/* 按鈕 */
+	.btn-primary {
+		@apply bg-primary text-white px-6 py-2 rounded-full hover:opacity-90 transition-all duration-300 shadow-elevation-1 active:scale-95;
+	}
+
+	.btn-solid-light {
+		@apply bg-white text-gray-900 px-8 py-4 rounded-full font-bold hover:scale-105 transition-standard;
+	}
+
+	.btn-outline-light {
+		@apply border-2 border-white text-white px-8 py-4 rounded-full font-bold
+         hover:bg-white/10 transition-standard;
+	}
+
+	/* 特色卡片 */
+	.feature-card {
+		/* 注意：v4 的 @apply 對於 group 的支援較嚴格，若報錯請直接在 HTML 使用 group */
+		@apply bg-container p-8 rounded-lg shadow-none hover:shadow-elevation-2 transition-all duration-300;
+	}
+
+	.feature-card-icon {
+		@apply w-14 h-14 bg-white rounded-2xl flex items-center justify-center mb-6 text-primary shadow-elevation-1 group-hover:bg-primary group-hover:text-white transition-standard;
+	}
+
+	/* 導航欄 */
+	.nav-blur {
+		@apply sticky top-0 z-50 bg-navbar-bg border-b border-navbar-border shadow-elevation-1 h-20 backdrop-blur-md;
+	}
+
+	
+}
+
+@utility transition-standard {
+  transition: all 0.3s ease-in-out;
+}

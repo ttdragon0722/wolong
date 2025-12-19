@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>綜合企業版型 - Material Design</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+
+    <style>
+        /* --- 顏色設定獨立區塊 (Material Design 3 Palette) --- */
+        :root {
+            --md-sys-color-primary: #6750A4;          /* 主色：品牌核心 */
+            --md-sys-color-on-primary: #FFFFFF;
+            --md-sys-color-secondary: #625B71;        /* 輔助色 */
+            --md-sys-color-surface: #FEF7FF;          /* 背景表面色 */
+            --md-sys-color-on-surface: #1D1B20;       /* 表面文字色 */
+            --md-sys-color-outline: #79747E;          /* 框線色 */
+            --md-sys-color-surface-container: #F3EDF7;/* 容器色 */
+            --primary-gradient: linear-gradient(135deg, #6750A4 0%, #D0BCFF 100%);
+        }
+
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: var(--md-sys-color-surface);
+            color: var(--md-sys-color-on-surface);
+        }
+
+        /* Material Design 陰影規範 */
+        .elevation-1 { box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15), 0px 1px 2px 0px rgba(0, 0, 0, 0.3); }
+        .elevation-2 { box-shadow: 0px 2px 6px 2px rgba(0, 0, 0, 0.15), 0px 1px 2px 0px rgba(0, 0, 0, 0.3); }
+        
+        .bg-primary { background-color: var(--md-sys-color-primary); }
+        .text-primary { color: var(--md-sys-color-primary); }
+        .bg-surface-container { background-color: var(--md-sys-color-surface-container); }
+        
+        .transition-standard { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        
+        /* 滾動平滑 */
+        html { scroll-behavior: smooth; }
+    </style>
+
+    <script>
+        // Tailwind 配置擴展
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            primary: '#6750A4',
+                            secondary: '#625B71',
+                            surface: '#FEF7FF',
+                        }
+                    },
+                    borderRadius: {
+                        'md-lg': '28px', // Material Design 3 Large Corner
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="m-0 p-0">
+
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 elevation-1">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white">
+                    <i class="fas fa-compass"></i>
+                </div>
+                <span class="text-2xl font-bold tracking-wider text-gray-800">企業品牌名稱</span>
+            </div>
+            
+            <div class="hidden md:flex space-x-8 font-medium">
+                <a href="#" class="hover:text-primary transition-standard">關於我們</a>
+                <a href="#" class="hover:text-primary transition-standard">產品項目</a>
+                <a href="#" class="hover:text-primary transition-standard">工程案例</a>
+                <a href="#" class="hover:text-primary transition-standard">最新消息</a>
+                <a href="#" class="bg-primary text-white px-6 py-2 rounded-full hover:opacity-90 transition-standard">聯絡我們</a>
+            </div>
+
+            <div class="md:hidden">
+                <button>
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="relative h-[80vh] flex items-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2000" 
+                 alt="Hero Background" 
+                 class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black/30"></div>
+        </div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-6 text-white">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">專業、品質、<br><span class="text-purple-300">色彩的極致追求</span></h1>
+            <p class="text-xl md:text-2xl mb-10 max-w-2xl font-light opacity-90">
+                結合色彩研究所的精準與廚具工藝的細膩，為您打造獨一無二的生活空間與工業標準。
+            </p>
+            <div class="flex flex-wrap gap-4">
+                <button class="bg-white text-gray-900 px-8 py-4 rounded-full font-bold elevation-2 hover:scale-105 transition-standard">
+                    立即諮詢
+                </button>
+                <button class="border-2 border-white text-white px-8 py-4 rounded-full font-bold hover:bg-white/10 transition-standard">
+                    瀏覽作品
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold mb-4">核心優勢</h2>
+            <div class="w-20 h-1 bg-primary mx-auto"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-surface-container p-8 rounded-md-lg hover:elevation-2 transition-standard group">
+                <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mb-6 text-primary elevation-1 group-hover:bg-primary group-hover:text-white transition-standard">
+                    <i class="fas fa-flask text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4">專業研發能力</h3>
+                <p class="text-gray-600 leading-relaxed">承襲色研所的高標準要求，我們在每一項細節中追求精確與穩定。</p>
+            </div>
+
+            <div class="bg-surface-container p-8 rounded-md-lg hover:elevation-2 transition-standard group">
+                <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mb-6 text-primary elevation-1 group-hover:bg-primary group-hover:text-white transition-standard">
+                    <i class="fas fa-tools text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4">職人工藝技術</h3>
+                <p class="text-gray-600 leading-relaxed">如同春蘭廚具對空間的堅持，我們提供最嚴謹的現場施作與安裝服務。</p>
+            </div>
+
+            <div class="bg-surface-container p-8 rounded-md-lg hover:elevation-2 transition-standard group">
+                <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mb-6 text-primary elevation-1 group-hover:bg-primary group-hover:text-white transition-standard">
+                    <i class="fas fa-shield-alt text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4">國際品質認證</h3>
+                <p class="text-gray-600 leading-relaxed">結合工業級傳動系統的耐用標準，確保每一件產品都能經久耐用。</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                <div>
+                    <h2 class="text-3xl font-bold mb-2">精選案例</h2>
+                    <p class="text-gray-500">探索我們如何將色彩與空間完美結合</p>
+                </div>
+                <div class="flex space-x-4 text-sm font-medium">
+                    <button class="px-4 py-2 bg-primary text-white rounded-full">全部</button>
+                    <button class="px-4 py-2 hover:bg-gray-100 rounded-full transition-standard">室內設計</button>
+                    <button class="px-4 py-2 hover:bg-gray-100 rounded-full transition-standard">工業配色</button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="group relative overflow-hidden rounded-md-lg aspect-[3/4] cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1556911223-e45b798e1f06?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-110 transition-duration-500 transition-standard">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-standard flex flex-col justify-end p-6">
+                        <span class="text-primary font-bold text-sm mb-1">KITCHEN DESIGN</span>
+                        <h4 class="text-white text-xl font-bold">極簡灰階廚房工程</h4>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-md-lg aspect-[3/4] cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-110 transition-standard">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-standard flex flex-col justify-end p-6">
+                        <span class="text-primary font-bold text-sm mb-1">COLOR LAB</span>
+                        <h4 class="text-white text-xl font-bold">東煦色彩應用展</h4>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-md-lg aspect-[3/4] cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-110 transition-standard">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-standard flex flex-col justify-end p-6">
+                        <span class="text-primary font-bold text-sm mb-1">INDUSTRIAL</span>
+                        <h4 class="text-white text-xl font-bold">高性能葉輪塗層</h4>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-md-lg aspect-[3/4] cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-110 transition-standard">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-standard flex flex-col justify-end p-6">
+                        <span class="text-primary font-bold text-sm mb-1">DECO</span>
+                        <h4 class="text-white text-xl font-bold">閣家現代豪宅規劃</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-gray-300 py-20 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+            <div class="col-span-1 md:col-span-1">
+                <div class="flex items-center space-x-2 mb-6">
+                    <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white text-xs">
+                        <i class="fas fa-compass"></i>
+                    </div>
+                    <span class="text-xl font-bold text-white tracking-widest">BRAND LOGO</span>
+                </div>
+                <p class="text-sm leading-relaxed opacity-70">
+                    整合美學與工業技術的領導品牌，我們致力於提供超越期待的視覺與使用體驗。
+                </p>
+            </div>
+            
+            <div>
+                <h5 class="text-white font-bold mb-6">快速連結</h5>
+                <ul class="space-y-4 text-sm">
+                    <li><a href="#" class="hover:text-white transition-standard">關於我們</a></li>
+                    <li><a href="#" class="hover:text-white transition-standard">產品導覽</a></li>
+                    <li><a href="#" class="hover:text-white transition-standard">技術白皮書</a></li>
+                    <li><a href="#" class="hover:text-white transition-standard">隱私權政策</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h5 class="text-white font-bold mb-6">聯絡資訊</h5>
+                <ul class="space-y-4 text-sm">
+                    <li class="flex items-start space-x-3">
+                        <i class="fas fa-location-dot mt-1 text-primary"></i>
+                        <span>台北市信義區某某路 88 號 10 樓</span>
+                    </li>
+                    <li class="flex items-center space-x-3">
+                        <i class="fas fa-phone text-primary"></i>
+                        <span>02-2345-6789</span>
+                    </li>
+                    <li class="flex items-center space-x-3">
+                        <i class="fas fa-envelope text-primary"></i>
+                        <span>service@example.com</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h5 class="text-white font-bold mb-6">訂閱電子報</h5>
+                <div class="relative">
+                    <input type="email" placeholder="您的信箱" class="w-full bg-gray-800 border-none rounded-full py-3 px-6 text-sm focus:ring-2 focus:ring-primary outline-none">
+                    <button class="absolute right-2 top-1.5 bg-primary text-white p-2 rounded-full hover:scale-105 transition-standard">
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+                <div class="flex space-x-4 mt-8">
+                    <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-standard"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-standard"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-standard"><i class="fab fa-line"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto mt-20 pt-8 border-t border-gray-800 text-center text-xs opacity-50">
+            <p>&copy; 2024 企業品牌名稱 版權所有. Designed with Material Design 3.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
