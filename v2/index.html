@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-TW">
   <head>
     <meta charset="UTF-8" />
@@ -37,10 +37,121 @@
           <div class="hidden space-x-8 md:flex md:items-center">
             <a href="#" class="nav-item">Home</a>
             <a href="#" class="nav-item">Company</a>
-            <a href="#" class="nav-item">Products</a>
+
+            <div class="relative group h-full flex items-center">
+              <button
+                class="nav-item flex items-center gap-1 focus:outline-none py-4"
+              >
+                Products
+                <svg
+                  class="w-4 h-4 transition-transform group-hover:rotate-180"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </button>
+
+              <div
+                class="hidden group-hover:block absolute top-full left-0 w-56 bg-white border border-gray-200 rounded shadow-lg py-2"
+              >
+                <div
+                  class="absolute -top-2 left-0 w-full h-2 bg-transparent"
+                ></div>
+
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-gray-100 text-sm text-gray-700"
+                  >All Products</a
+                >
+
+                <div class="relative group/sub">
+                  <button
+                    class="w-full text-left flex items-center justify-between px-4 py-2 hover:bg-gray-100 text-sm text-gray-700"
+                  >
+                    CNC Machining
+                    <svg
+                      class="w-4 h-4 transform -rotate-90"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M19 9l-7 7-7-7"
+                      ></path>
+                    </svg>
+                  </button>
+
+                  <div
+                    class="hidden group-hover/sub:block absolute left-full top-0 ml-1 w-48 bg-white border border-gray-200 rounded shadow-lg py-2"
+                  >
+                    <a
+                      href="#"
+                      class="block px-4 py-2 hover:bg-gray-100 text-sm text-gray-700"
+                      >Milling</a
+                    >
+                    <a
+                      href="#"
+                      class="block px-4 py-2 hover:bg-gray-100 text-sm text-gray-700"
+                      >Turning</a
+                    >
+                    <a
+                      href="#"
+                      class="block px-4 py-2 hover:bg-gray-100 text-sm text-gray-700"
+                      >Drilling</a
+                    >
+                  </div>
+                </div>
+
+                <div class="relative group/sub">
+                  <button
+                    class="w-full text-left flex items-center justify-between px-4 py-2 hover:bg-gray-100 text-sm text-gray-700"
+                  >
+                    Surface Finish
+                    <svg
+                      class="w-4 h-4 transform -rotate-90"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M19 9l-7 7-7-7"
+                      ></path>
+                    </svg>
+                  </button>
+
+                  <div
+                    class="hidden group-hover/sub:block absolute left-full top-0 ml-1 w-48 bg-white border border-gray-200 rounded shadow-lg py-2"
+                  >
+                    <a
+                      href="#"
+                      class="block px-4 py-2 hover:bg-gray-100 text-sm text-gray-700"
+                      >Anodizing</a
+                    >
+                    <a
+                      href="#"
+                      class="block px-4 py-2 hover:bg-gray-100 text-sm text-gray-700"
+                      >Polishing</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <a href="#" class="nav-item">News</a>
             <a href="#" class="nav-item">Contact</a>
-
             <button class="btn-primary">Get Quote</button>
           </div>
 
@@ -72,7 +183,99 @@
         >
           <a href="#" class="mobile-nav-item">Home</a>
           <a href="#" class="mobile-nav-item">Company</a>
-          <a href="#" class="mobile-nav-item">Products</a>
+
+          <div>
+            <button
+              id="mobile-products-btn"
+              class="mobile-nav-item w-full flex justify-between items-center"
+            >
+              Products
+              <svg
+                class="w-4 h-4 transition-transform duration-200 rotate-180"
+                id="mobile-products-icon"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+
+            <div id="mobile-products-content">
+              <a href="#" class="mobile-nav-item pl-8 text-sm opacity-90"
+                >All Products</a
+              >
+
+              <div>
+                <button
+                  class="mobile-nav-item w-full flex justify-between items-center pl-8 text-sm opacity-90 mobile-submenu-trigger"
+                >
+                  CNC Machining
+                  <svg
+                    class="w-3 h-3 transition-transform duration-200"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"
+                    ></path>
+                  </svg>
+                </button>
+
+                <div class="hidden">
+                  <a href="#" class="mobile-nav-item pl-12 text-sm opacity-75"
+                    >Milling</a
+                  >
+                  <a href="#" class="mobile-nav-item pl-12 text-sm opacity-75"
+                    >Turning</a
+                  >
+                  <a href="#" class="mobile-nav-item pl-12 text-sm opacity-75"
+                    >Drilling</a
+                  >
+                </div>
+              </div>
+
+              <div>
+                <button
+                  class="mobile-nav-item w-full flex justify-between items-center pl-8 text-sm opacity-90 mobile-submenu-trigger"
+                >
+                  Surface Finish
+                  <svg
+                    class="w-3 h-3 transition-transform duration-200"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"
+                    ></path>
+                  </svg>
+                </button>
+
+                <div class="hidden">
+                  <a href="#" class="mobile-nav-item pl-12 text-sm opacity-75"
+                    >Anodizing</a
+                  >
+                  <a href="#" class="mobile-nav-item pl-12 text-sm opacity-75"
+                    >Polishing</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
           <a href="#" class="mobile-nav-item">News</a>
           <a href="#" class="mobile-nav-item">Contact</a>
           <div class="pt-2">
@@ -80,39 +283,66 @@
           </div>
         </div>
       </nav>
-
       <script>
+        // --- 1. Navbar Scroll 變色邏輯 (維持不變) ---
         const navbar = document.getElementById("navbar");
-
         function updateNavbar() {
-          // 判斷捲軸高度是否大於 10px (避免一點點震動就變色)
           if (window.scrollY > 15) {
-            // --- 捲動後的狀態 (變黑色) ---
             navbar.classList.remove("bg-navbar-bg");
-            navbar.classList.add("nav-bar-scrolling"); // 建議加一點透明度的黑 (/90)，更有質感
+            navbar.classList.add("nav-bar-scrolling");
           } else {
-            // --- 回到頂部的狀態 (變透明) ---
             navbar.classList.add("bg-navbar-bg");
             navbar.classList.remove("nav-bar-scrolling");
           }
         }
-
-        // 監聽捲動事件
         window.addEventListener("scroll", updateNavbar);
-
-        // 初始化 (防止重新整理網頁時停留在中間，樣式卻是透明的)
         updateNavbar();
+
+        // --- 2. Mobile Menu 主開關 (漢堡選單) ---
+        const btn = document.getElementById("mobile-menu-btn");
+        const menu = document.getElementById("mobile-menu");
+        btn.addEventListener("click", () => {
+          menu.classList.toggle("hidden");
+        });
+
+        // --- 3. 手機版 Products 手風琴邏輯 (點擊收合/展開) ---
+
+        // 第一層 Products
+        const mobileProdBtn = document.getElementById("mobile-products-btn");
+        const mobileProdContent = document.getElementById(
+          "mobile-products-content",
+        );
+        const mobileProdIcon = document.getElementById("mobile-products-icon");
+
+        mobileProdBtn.addEventListener("click", () => {
+          mobileProdContent.classList.toggle("hidden");
+          // 控制箭頭動畫
+          if (mobileProdContent.classList.contains("hidden")) {
+            mobileProdIcon.classList.remove("rotate-180");
+          } else {
+            mobileProdIcon.classList.add("rotate-180");
+          }
+        });
+
+        // 第二層 (CNC Machining, Surface Finish...)
+        const mobileSubTriggers = document.querySelectorAll(
+          ".mobile-submenu-trigger",
+        );
+        mobileSubTriggers.forEach((trigger) => {
+          trigger.addEventListener("click", () => {
+            const content = trigger.nextElementSibling;
+            const icon = trigger.querySelector("svg");
+
+            content.classList.toggle("hidden");
+            if (content.classList.contains("hidden")) {
+              icon.classList.remove("rotate-180");
+            } else {
+              icon.classList.add("rotate-180");
+            }
+          });
+        });
       </script>
     </header>
-
-    <script>
-      const btn = document.getElementById("mobile-menu-btn");
-      const menu = document.getElementById("mobile-menu");
-
-      btn.addEventListener("click", () => {
-        menu.classList.toggle("hidden");
-      });
-    </script>
     <div
       id="carousel"
       class="relative group w-full h-[20vh] sm:h-[48vh] md:h-[72vh] overflow-hidden bg-surface"
@@ -302,10 +532,10 @@
                 class="absolute inset-0 rounded-full bg-primary/10 blur-xl group-hover:bg-primary/20 transition-all duration-500"
               ></div>
               <div
-                class="relative flex items-center justify-center w-20 h-20 mx-auto rounded-full bg-surface border border-outline/30 shadow-elevation-1"
+                class="relative flex items-center justify-center w-30 h-30 mx-auto rounded-full bg-surface border border-outline/30 shadow-elevation-1"
               >
                 <svg
-                  class="w-10 h-10 text-primary"
+                  class="w-15 h-15 text-primary"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -347,10 +577,10 @@
                 class="absolute inset-0 rounded-full bg-primary/10 blur-xl group-hover:bg-primary/20 transition-all duration-500"
               ></div>
               <div
-                class="relative flex items-center justify-center w-20 h-20 mx-auto rounded-full bg-surface border border-outline/30 shadow-elevation-1"
+                class="relative flex items-center justify-center w-30 h-30 mx-auto rounded-full bg-surface border border-outline/30 shadow-elevation-1"
               >
                 <svg
-                  class="w-10 h-10 text-primary"
+                  class="w-15 h-15 text-primary"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -386,10 +616,10 @@
                 class="absolute inset-0 rounded-full bg-primary/10 blur-xl group-hover:bg-primary/20 transition-all duration-500"
               ></div>
               <div
-                class="relative flex items-center justify-center w-20 h-20 mx-auto rounded-full bg-surface border border-outline/30 shadow-elevation-1"
+                class="relative flex items-center justify-center w-30 h-30 mx-auto rounded-full bg-surface border border-outline/30 shadow-elevation-1"
               >
                 <svg
-                  class="w-10 h-10 text-primary"
+                  class="w-15 h-15 text-primary"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -425,10 +655,10 @@
                 class="absolute inset-0 rounded-full bg-primary/10 blur-xl group-hover:bg-primary/20 transition-all duration-500"
               ></div>
               <div
-                class="relative flex items-center justify-center w-20 h-20 mx-auto rounded-full bg-surface border border-outline/30 shadow-elevation-1"
+                class="relative flex items-center justify-center w-30 h-30 mx-auto rounded-full bg-surface border border-outline/30 shadow-elevation-1"
               >
                 <svg
-                  class="w-10 h-10 text-primary"
+                  class="w-15 h-15 text-primary"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -456,7 +686,9 @@
       </div>
     </section>
 
-    <section class="py-20 bg-[url(../img/index-prod-bg.jpg)] border-t border-outline/10">
+    <section
+      class="py-20 bg-[url(../img/index-prod-bg.jpg)] border-t border-outline/10"
+    >
       <div class="custom-container relative">
         <div class="mb-12 flex flex-col items-center text-center">
           <h3
@@ -471,7 +703,7 @@
         <div class="relative group/slider">
           <button
             id="prod-prev"
-            class="absolute -left-4 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-surface border border-outline/20 text-on-surface shadow-elevation-1 opacity-0 group-hover/slider:opacity-100 transition-opacity disabled:opacity-30 hover:bg-primary hover:text-on-primary"
+            class="absolute -left-4 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-surface border border-outline/20 text-on-surface shadow-elevation-1 transition-opacity disabled:opacity-30 hover:bg-primary hover:text-on-primary"
           >
             <svg
               class="w-6 h-6"
@@ -495,7 +727,7 @@
 
           <button
             id="prod-next"
-            class="absolute -right-4 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-surface border border-outline/20 text-on-surface shadow-elevation-1 opacity-0 group-hover/slider:opacity-100 transition-opacity hover:bg-primary hover:text-on-primary"
+            class="absolute -right-4 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-surface border border-outline/20 text-on-surface shadow-elevation-1 transition-opacity hover:bg-primary hover:text-on-primary"
           >
             <svg
               class="w-6 h-6"
@@ -578,7 +810,7 @@
                     </div>
                 </a>
             </div>
-        `
+        `,
               )
               .join(""); // 將陣列合併成一個大字串
 
@@ -849,5 +1081,63 @@
         </div>
       </div>
     </footer>
+
+    <button
+      id="backToTopBtn"
+      onclick="scrollToTop()"
+      class="fixed bottom-6 right-6 z-50 hidden p-3 bg-primary shadow-elevation-1 text-white rounded-full transition-opacity duration-300 opacity-0 md:hidden hover:bg-blue-700 focus:outline-none"
+      aria-label="回到頂端"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M5 10l7-7m0 0l7 7m-7-7v18"
+        />
+      </svg>
+    </button>
+
+    <script>
+      // 取得按鈕元素
+      const backToTopBtn = document.getElementById("backToTopBtn");
+
+      // 監聽捲動事件
+      window.onscroll = function () {
+        // 當卷軸超過 200px 時顯示按鈕
+        if (
+          document.body.scrollTop > 200 ||
+          document.documentElement.scrollTop > 200
+        ) {
+          backToTopBtn.classList.remove("hidden"); // 移除 hidden 以確保它存在
+          // 使用 setTimeout 讓透明度動畫生效
+          setTimeout(() => {
+            backToTopBtn.classList.remove("opacity-0");
+            backToTopBtn.classList.add("opacity-100");
+          }, 10);
+        } else {
+          backToTopBtn.classList.remove("opacity-100");
+          backToTopBtn.classList.add("opacity-0");
+          // 等動畫跑完再隱藏
+          setTimeout(() => {
+            backToTopBtn.classList.add("hidden");
+          }, 300);
+        }
+      };
+
+      // 點擊回到頂端功能
+      function scrollToTop() {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth", // 平滑捲動效果
+        });
+      }
+    </script>
   </body>
 </html>

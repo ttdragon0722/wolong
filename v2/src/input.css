@@ -44,6 +44,8 @@
   /* --- 6. 動畫 (Transitions) --- */
   --duration-standard: 300ms;
   --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+
+  --width-30: 7.5rem;
 }
 
 @layer utilities {
