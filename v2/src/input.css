@@ -104,7 +104,52 @@
   .btn-primary {
     @apply bg-primary text-on-primary px-6 py-2 rounded-lg 
            hover:opacity-90 active:scale-95 
-           shadow-elevation-1 transition-all  ease-standard;
+           shadow-elevation-1 transition-all ease-(--ease-standard);
+  }
+
+  .form-control {
+    @apply block w-full px-4 py-2.5 text-on-surface bg-container border border-outline/50 rounded-lg
+           transition-all duration-(--duration-standard) ease-(--ease-standard)
+           placeholder:text-secondary/50
+           focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  /* --- [新增] 側邊欄組件 (Sidebox / Vote) --- */
+  .sidebox {
+    @apply bg-container border border-outline/20 rounded-xl p-6 shadow-elevation-1 mb-8;
+  }
+
+  .sidebox-title {
+    @apply text-xl font-bold text-primary mb-6 flex items-center gap-2;
+    &::before {
+      content: "";
+      @apply w-1 h-6 bg-primary rounded-full;
+    }
+  }
+
+  .votetitle {
+    @apply text-on-surface font-semibold mb-4 block leading-relaxed;
+  }
+
+  .sublist {
+    @apply list-none p-0 space-y-2 mb-6;
+  }
+
+  .label-default {
+    @apply flex items-center gap-3 px-4 py-3 rounded-lg border border-outline/10
+           cursor-pointer transition-all duration-(--duration-standard) ease-(--ease-standard)
+           hover:bg-surface hover:border-primary/50 text-secondary hover:text-on-surface;
+    
+    & input[type="radio"] {
+      @apply accent-primary w-4 h-4;
+    }
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-2 rounded-lg font-medium
+           bg-primary text-on-primary transition-all duration-(--duration-standard)
+           hover:opacity-90 active:scale-95 shadow-elevation-1 cursor-pointer;
   }
 
   /* --- [新增] 桌面版導航連結 --- */
@@ -114,12 +159,12 @@
 
   .nav-item {
     /* 1. 本體設定：加入 relative 以便讓底線定位 */
-    @apply relative text-secondary font-medium transition-colors  ease-standard hover:text-primary;
+    @apply relative text-secondary font-medium transition-colors ease-(--ease-standard) hover:text-primary;
 
     /* 2. 底線設定 (使用偽元素 ::after) */
     &::after {
       content: ""; /* 必須有 content 才能顯示 */
-      @apply absolute left-0 -bottom-1 h-[2px] w-0 bg-primary transition-all  ease-standard;
+      @apply absolute left-0 -bottom-1 h-[2px] w-0 bg-primary transition-all ease-(--ease-standard);
     }
 
     /* 3. Hover 觸發動畫：寬度從 0 變為 100% */
@@ -131,7 +176,7 @@
   /* --- [新增] 手機版導航連結 (整理重複樣式) --- */
   .mobile-nav-item {
     @apply block w-full px-4 py-3 text-sm font-medium rounded-lg
-           text-secondary transition-colors  ease-standard
+           text-secondary transition-colors ease-(--ease-standard)
            hover:bg-container hover:text-primary;
   }
 
