@@ -162,6 +162,32 @@
     @apply block px-4 py-2 hover:bg-gray-100 text-sm text-gray-700;
   }
 
+  /* carousel */
+
+  .carousel-item {
+    @apply relative min-w-full h-full;
+  }
+
+  .carousel-filter {
+    @apply absolute inset-0 bg-black/10;
+  }
+
+  .carousel-img {
+    @apply absolute inset-0 w-full h-full object-cover;
+  }
+
+
+  /* text font */
+
+  .solid-text {
+    font-size: 60px;
+    position: relative;
+    -webkit-text-stroke: 1px white;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.1;
+    letter-spacing: 1px;
+  }
+  
 
 
   /* 自定義 Container */
