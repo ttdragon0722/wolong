@@ -37,7 +37,7 @@
                     <div class="hidden space-x-8 md:flex md:items-center">
                         <a href="#" class="nav-item">Home</a>
                         <a href="#" class="nav-item">Company</a>
-                        
+
                         <a href="#" class="nav-item">News</a>
                         <a href="#" class="nav-item">Contact</a>
 
@@ -45,9 +45,7 @@
                             class="group dropdown-btn"
                             id="desktop-products-wrapper"
                         >
-                            <button
-                                class="nav-item dropdown-text"
-                            >
+                            <button class="nav-item dropdown-text">
                                 Products
                                 <svg
                                     class="dropdown-icon group-hover:rotate-180"
@@ -68,54 +66,24 @@
                                 id="desktop-products-dropdown"
                                 class="dropdown-container group-hover:block"
                             >
-                                <div
-                                    class="dropdown-banner"
-                                ></div>
+                                <div class="dropdown-banner"></div>
 
-                                <a
-                                    href="#"
-                                    class="dropdown-item"
+                                <a href="#" class="dropdown-item"
                                     >All Products</a
                                 >
-                                <a
-                                    href="#"
-                                    class="dropdown-item"
+                                <a href="#" class="dropdown-item"
                                     >CNC Machining</a
                                 >
-                                <a
-                                    href="#"
-                                    class="dropdown-item"
-                                    >Milling</a
-                                >
-                                <a
-                                    href="#"
-                                    class="dropdown-item"
-                                    >Turning</a
-                                >
-                                <a
-                                    href="#"
-                                    class="dropdown-item"
-                                    >Drilling</a
-                                >
-                                <a
-                                    href="#"
-                                    class="dropdown-item"
+                                <a href="#" class="dropdown-item">Milling</a>
+                                <a href="#" class="dropdown-item">Turning</a>
+                                <a href="#" class="dropdown-item">Drilling</a>
+                                <a href="#" class="dropdown-item"
                                     >Surface Finish</a
                                 >
-                                <a
-                                    href="#"
-                                    class="dropdown-item"
-                                    >Anodizing</a
-                                >
-                                <a
-                                    href="#"
-                                    class="dropdown-item"
-                                    >Polishing</a
-                                >
+                                <a href="#" class="dropdown-item">Anodizing</a>
+                                <a href="#" class="dropdown-item">Polishing</a>
                             </div>
                         </div>
-                        
-
                     </div>
 
                     <div class="flex items-center md:hidden">
@@ -283,7 +251,55 @@
                     // 切換箭頭圖示動畫
                     productsIcon.classList.toggle("rotate-180");
                 });
+
+                
             });
+        </script>
+
+        <button id="backToTop" class="back-to-top" aria-label="Back to top">
+            <span class="icon font-serif">&gt;</span>
+            <span class="text-label">TOP</span>
+        </button>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const backToTopBtn = document.getElementById("backToTop");
+
+                // 監聽滾動事件
+                window.addEventListener("scroll", () => {
+                    // 當頁面下滑超過 400px 時顯示，否則隱藏
+                    if (window.scrollY > 400) {
+                        backToTopBtn.classList.remove(
+                            "opacity-0",
+                            "invisible",
+                            "translate-y-10",
+                        );
+                        backToTopBtn.classList.add(
+                            "opacity-100",
+                            "visible",
+                            "translate-y-0",
+                        );
+                    } else {
+                        backToTopBtn.classList.add(
+                            "opacity-0",
+                            "invisible",
+                            "translate-y-10",
+                        );
+                        backToTopBtn.classList.remove(
+                            "opacity-100",
+                            "visible",
+                            "translate-y-0",
+                        );
+                    }
+                });
+
+                // 點擊事件：平滑回頂
+                backToTopBtn.addEventListener("click", () => {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: "smooth",
+                    });
+                });
+            })
         </script>
 
         <div
@@ -956,11 +972,8 @@
         >
             <div class="custom-container">
                 <div class="flex flex-col gap-12 lg:flex-row">
-                    
                     <div class="w-full space-y-4 lg:w-1/3">
-                        <h2 class="text-3xl font-bold">
-                            YCT Precision
-                        </h2>
+                        <h2 class="text-3xl font-bold">YCT Precision</h2>
                         <div class="space-y-1 text-secondary">
                             <p class="font-medium">
                                 GU HUNG INTERNATIONAL TRADE CO., LTD.
@@ -1080,63 +1093,5 @@
                 </div>
             </div>
         </footer>
-
-        <button
-            id="backToTopBtn"
-            onclick="scrollToTop()"
-            class="fixed bottom-6 right-6 z-50 hidden p-3 bg-primary shadow-elevation-1 text-white rounded-full transition-opacity duration-300 opacity-0 md:hidden hover:bg-blue-700 focus:outline-none"
-            aria-label="回到頂端"
-        >
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-            >
-                <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M5 10l7-7m0 0l7 7m-7-7v18"
-                />
-            </svg>
-        </button>
-
-        <script>
-            // 取得按鈕元素
-            const backToTopBtn = document.getElementById("backToTopBtn");
-
-            // 監聽捲動事件
-            window.onscroll = function () {
-                // 當卷軸超過 200px 時顯示按鈕
-                if (
-                    document.body.scrollTop > 200 ||
-                    document.documentElement.scrollTop > 200
-                ) {
-                    backToTopBtn.classList.remove("hidden"); // 移除 hidden 以確保它存在
-                    // 使用 setTimeout 讓透明度動畫生效
-                    setTimeout(() => {
-                        backToTopBtn.classList.remove("opacity-0");
-                        backToTopBtn.classList.add("opacity-100");
-                    }, 10);
-                } else {
-                    backToTopBtn.classList.remove("opacity-100");
-                    backToTopBtn.classList.add("opacity-0");
-                    // 等動畫跑完再隱藏
-                    setTimeout(() => {
-                        backToTopBtn.classList.add("hidden");
-                    }, 300);
-                }
-            };
-
-            // 點擊回到頂端功能
-            function scrollToTop() {
-                window.scrollTo({
-                    top: 0,
-                    behavior: "smooth", // 平滑捲動效果
-                });
-            }
-        </script>
     </body>
 </html>
