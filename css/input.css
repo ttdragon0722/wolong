@@ -1,0 +1,278 @@
+@import "tailwindcss";
+
+@theme {
+  /* --- 1. 顏色 (Colors - Dark Mode) --- */
+
+  /* 主要顏色：您指定的藍色 */
+  --color-primary: #0070e6;
+  /* 在主色上的文字：白色 */
+  --color-on-primary: #ffffff;
+
+  /* 次要顏色：用於導航連結、次要文字 (原本是深灰，現在改為淺灰藍以確保在黑底可讀) */
+  --color-secondary: white; /* Slate-400 */
+
+  /* 頁面背景：深色背景 (深石板藍，比純黑更有質感) */
+  --color-surface: #181818; /* Slate-900 */
+  /* 在背景上的文字：接近白色 */
+  --color-on-surface: #f1f5f9; /* Slate-100 */
+
+  /* 邊框線條：深灰色 */
+  --color-outline: #334155; /* Slate-700 */
+
+  /* 容器/卡片背景：比背景稍微亮一點的深色 */
+  --color-container: #1f1f1f; /* Slate-800 */
+
+  /* --- Navbar 專用設定 --- */
+  /* 導航列背景：半透明的深色背景 */
+  --color-navbar-bg: transparent;
+  --color-navbar-mobile-bg: rgba(0,0,0,.95);
+
+
+  /* --- 2. 圓角 (Border Radius) --- */
+  --radius-lg: 28px;
+
+  /* --- 3. 陰影 (Shadows) --- */
+  --shadow-elevation-1: 0px 1px 3px 1px rgba(0, 0, 0, 0.15),
+    0px 1px 2px 0px rgba(0, 0, 0, 0.3);
+  --shadow-elevation-2: 0px 2px 6px 2px rgba(0, 0, 0, 0.15),
+    0px 1px 2px 0px rgba(0, 0, 0, 0.3);
+
+  /* --- 4. 字體 (Fonts) --- */
+  --font-sans: "Noto Sans TC", sans-serif;
+
+  /* --- 5. 寬度與間距 (Spacing) --- */
+  --spacing-pc: 1540px;
+
+  /* --- 6. 動畫 (Transitions) --- */
+  --duration-standard: 300ms;  /* 這會產生 .duration-standard */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1); /* 這會產生 .ease-standard */
+
+  --width-30: 7.5rem;
+
+  
+}
+
+@layer utilities {
+  .theme-light {
+    /* 在這裡「覆蓋」上面的變數值 
+       當這些變數被用在 .theme-light 裡面時，會變成下面的顏色
+    */
+
+    /* 背景變成白色 */
+    --color-surface: #ffffff;
+
+    /* 文字變成深色 (原本是 #f1f5f9) */
+    --color-on-surface: #181818;
+
+    /* 次要文字變成灰色 (原本是 white，在白底會看不見，必須改深) */
+    --color-secondary: #64748b; /* Slate-500 */
+
+    /* 容器變成淺灰 */
+    --color-container: #f3f4f6; /* Gray-100 */
+
+    /* 邊框變淺 */
+    --color-outline: #e2e8f0; /* Slate-200 */
+
+    /* 陰影調整 (白底的陰影通常需要淡一點) */
+    --shadow-elevation-1: 0px 1px 3px 1px rgba(0, 0, 0, 0.1),
+      0px 1px 2px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  /* 隱藏 Chrome, Safari, Edge 的捲軸 */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* 隱藏 Firefox 的捲軸 */
+  .scrollbar-hide {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
+/* 基礎設定 */
+@layer base {
+  body {
+    @apply bg-surface text-on-surface antialiased font-sans;
+  }
+}
+
+/* 元件設定 */
+@layer components {
+
+  /* public */
+  .header-function {
+    @apply fixed top-0 z-50 w-full border-b bg-navbar-bg shadow-elevation-1 py-4 
+    transition-colors ease-(--ease-standard) duration-(--duration-standard)
+    max-md:sticky max-md:bg-navbar-mobile-bg max-md:backdrop-blur-md;
+  }
+
+  .nav-bar-scrolling {
+    @apply bg-navbar-mobile-bg backdrop-blur-md;
+  }
+  
+  .nav-item {
+    /* 1. 本體設定：加入 relative 以便讓底線定位 */
+    @apply relative text-secondary font-black transition-colors ease-(--ease-standard) hover:text-primary;
+
+    /* 2. 底線設定 (使用偽元素 ::after) */  
+    &::after {
+      content: ""; /* 必須有 content 才能顯示 */
+      @apply absolute left-0 -bottom-1 h-[2px] w-0 bg-primary transition-all ease-(--ease-standard);
+    }
+
+    /* 3. Hover 觸發動畫：寬度從 0 變為 100% */
+    &:hover::after {
+      @apply w-full;
+    }
+  }
+
+  .mobile-nav-item {
+    @apply block w-full py-6 text-center text-sm font-medium border-b-2 border-b-white/20
+           text-secondary transition-colors ease-(--ease-standard)
+           hover:bg-white/20;
+  }
+
+  .mobile-nav-second-item {
+    @apply py-4 text-sm font-medium w-full text-center bg-container hover:bg-white/20 transition-colors ease-(--ease-standard);
+  }
+
+
+  /* dropdown css */
+  .dropdown-btn {
+    @apply relative h-full flex items-center;
+  }
+  .dropdown-text {
+    @apply flex items-center gap-1 focus:outline-none py-4;
+  }
+
+  .dropdown-icon {
+    @apply w-4 h-4 transition-transform ;
+  }
+
+  .dropdown-container {
+    @apply hidden absolute top-full left-1/2 -translate-x-1/2 w-56 border-t-4 border-primary bg-white border rounded shadow-lg py-2;
+  }
+
+  .dropdown-banner {
+    @apply absolute -top-2 left-0 w-full h-2 bg-transparent;
+  }
+
+  .dropdown-item {
+    @apply block px-4 py-2 hover:bg-gray-100 text-sm text-gray-700;
+  }
+
+
+
+  /* 自定義 Container */
+  .custom-container {
+    @apply w-full max-w-pc mx-auto px-4;
+  }
+
+  /* 按鈕組件 */
+  .btn-primary {
+    @apply bg-primary text-on-primary px-6 py-2 rounded-lg 
+           hover:opacity-90 active:scale-95 
+           shadow-elevation-1 transition-all ease-(--ease-standard);
+  }
+
+  .form-control {
+    @apply block w-full px-4 py-2.5 text-on-surface bg-container border border-outline/50 rounded-lg
+           transition-all duration-(--duration-standard) ease-(--ease-standard)
+           placeholder:text-secondary/50
+           focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  /* --- [新增] 側邊欄組件 (Sidebox / Vote) --- */
+  .sidebox {
+    @apply bg-container border border-outline/20 rounded-xl p-6 shadow-elevation-1 mb-8;
+  }
+
+  .sidebox-title {
+    @apply text-xl font-bold text-primary mb-6 flex items-center gap-2;
+    &::before {
+      content: "";
+      @apply w-1 h-6 bg-primary rounded-full;
+    }
+  }
+
+  .votetitle {
+    @apply text-on-surface font-semibold mb-4 block leading-relaxed;
+  }
+
+  .sublist {
+    @apply list-none p-0 space-y-2 mb-6;
+  }
+
+  .label-default {
+    @apply flex items-center gap-3 px-4 py-3 rounded-lg border border-outline/10
+           cursor-pointer transition-all duration-(--duration-standard) ease-(--ease-standard)
+           hover:bg-surface hover:border-primary/50 text-secondary hover:text-on-surface;
+    
+    & input[type="radio"] {
+      @apply accent-primary w-4 h-4;
+    }
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-2 rounded-lg font-medium
+           bg-primary text-on-primary transition-all duration-(--duration-standard)
+           hover:opacity-90 active:scale-95 shadow-elevation-1 cursor-pointer;
+  }
+
+  
+
+  /* --- [新增] 手機版導航連結 (整理重複樣式) --- */
+  
+
+  /* 文字進場動畫 */
+  .slide-content-enter {
+    animation: slideUpFade 0.8s ease-out forwards;
+  }
+
+  @keyframes slideUpFade {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 40px, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  /* 建立動畫 class */
+  .animate-fade-in-up {
+    animation-name: fadeInUp;
+    animation-duration: 0.8s; /* 持續時間 */
+    animation-fill-mode: both; /* 確保動畫開始前維持隱藏，結束後維持顯示 */
+  }
+
+  /* Zoom In 動畫 */
+  @keyframes zoomIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .animate-zoom-in {
+    animation: zoomIn 0.8s ease-out forwards;
+  }
+}
