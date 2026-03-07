@@ -50,6 +50,14 @@
 }
 
 @layer utilities {
+    .no-scrollbar::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera */
+    }
+    .no-scrollbar {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+
     .theme-light {
         /* 在這裡「覆蓋」上面的變數值 
        當這些變數被用在 .theme-light 裡面時，會變成下面的顏色
