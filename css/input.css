@@ -448,6 +448,61 @@
         @apply space-y-2 text-gray-600;
     }
 
+    /* Q AND A */
+    /* Q&A 主容器 */
+    .qa-panel {
+        @apply border border-gray-200 bg-white mb-8 overflow-hidden rounded-none shadow-sm;
+    }
+
+    /* 標題區塊 */
+    .qa-header {
+        @apply bg-zinc-900 text-white px-6 py-4 flex items-center justify-between;
+    }
+
+    .qa-title {
+        @apply text-base font-black tracking-[0.15em] uppercase;
+    }
+
+    /* 內容主體 */
+    .qa-body {
+        @apply p-6 space-y-8;
+    }
+
+    /* 提問者區塊 */
+    .qa-user-section {
+        @apply flex flex-col gap-3;
+    }
+
+    .qa-user-meta {
+        @apply flex justify-between items-center border-b border-gray-100 pb-2;
+    }
+
+    .qa-user-name {
+        @apply text-sm font-black text-slate-900 flex items-center gap-2;
+    }
+
+    .qa-date {
+        @apply text-[11px] text-slate-400 font-mono tracking-tighter;
+    }
+
+    .qa-question {
+        @apply text-slate-700 leading-relaxed pl-2 border-l-2 border-gray-200;
+    }
+
+    /* 站長回覆區塊 (加強對比) */
+    .qa-admin-reply {
+        @apply relative bg-primary/5 p-5 border-l-4 border-primary mt-6 ml-2 sm:ml-6;
+    }
+
+    .qa-admin-label {
+        @apply text-[10px] font-black text-primary uppercase tracking-[0.2em] mb-3 flex items-center gap-2;
+    }
+
+    .qa-admin-content {
+        @apply text-slate-800 font-medium;
+    }
+
+
     /* text font */
 
     .solid-text {
