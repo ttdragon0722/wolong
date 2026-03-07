@@ -251,6 +251,8 @@
                     // 切換箭頭圖示動畫
                     productsIcon.classList.toggle("rotate-180");
                 });
+
+                
             });
         </script>
 
@@ -297,7 +299,7 @@
                         behavior: "smooth",
                     });
                 });
-            });
+            })
         </script>
 
         <div
@@ -476,40 +478,491 @@
         <section
             class="py-28 theme-light bg-[url(../img/index-bg.jpg)] bg-cover bg-center bg-no-repeat"
         >
-            <div class="custom-container text-on-surface">
-                <h3 class="page-title-h3 text-center">頁面連結</h3>
-                <div class="relative flex items-center justify-center py-4 px-100 mb-4">
-                    <hr class="w-full border-primary" />
+            <div class="custom-container">
+                <ul class="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-12">
+                    <li
+                        class="flex flex-col items-center text-center group animate-fade-in-up"
+                        style="animation-delay: 0ms"
+                    >
+                        <figure
+                            class="relative mb-6 transition-transform duration-500 group-hover:-translate-y-2"
+                        >
+                            <div
+                                class="absolute inset-0 rounded-full bg-primary/10 blur-xl group-hover:bg-primary/20 transition-all duration-500"
+                            ></div>
+                            <div
+                                class="relative flex items-center justify-center w-30 h-30 mx-auto rounded-full bg-surface border border-outline/30 shadow-elevation-1"
+                            >
+                                <svg
+                                    class="w-15 h-15 text-primary"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="1.5"
+                                        d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+                                    ></path>
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="1.5"
+                                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                                    ></path>
+                                </svg>
+                            </div>
+                        </figure>
+                        <h3
+                            class="mb-3 text-xl font-bold transition-colors text-on-surface group-hover:text-primary"
+                        >
+                            Precision Machining
+                        </h3>
+                        <p class="text-sm leading-relaxed text-secondary">
+                            Our experienced staff can handle a variety of
+                            materials, including aluminum, stainless steel, and
+                            carbon steel.
+                        </p>
+                    </li>
 
-                    <div class="absolute bg-white px-3">
-                        <div
-                            class="w-0 h-0 border-l-8 border-l-transparent border-r-8 border-r-transparent border-t-[12px] border-t-primary"
-                        ></div>
-                    </div>
+                    <li
+                        class="flex flex-col items-center text-center group animate-fade-in-up"
+                        style="
+                            animation-delay: 200ms;
+                            animation-fill-mode: backwards;
+                        "
+                    >
+                        <figure
+                            class="relative mb-6 transition-transform duration-500 group-hover:-translate-y-2"
+                        >
+                            <div
+                                class="absolute inset-0 rounded-full bg-primary/10 blur-xl group-hover:bg-primary/20 transition-all duration-500"
+                            ></div>
+                            <div
+                                class="relative flex items-center justify-center w-30 h-30 mx-auto rounded-full bg-surface border border-outline/30 shadow-elevation-1"
+                            >
+                                <svg
+                                    class="w-15 h-15 text-primary"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="1.5"
+                                        d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
+                                    ></path>
+                                </svg>
+                            </div>
+                        </figure>
+                        <h3
+                            class="mb-3 text-xl font-bold transition-colors text-on-surface group-hover:text-primary"
+                        >
+                            Custom Manufacturing
+                        </h3>
+                        <p class="text-sm leading-relaxed text-secondary">
+                            Our team of engineers will work closely with you to
+                            understand your needs and design parts that meet
+                            specifications.
+                        </p>
+                    </li>
+
+                    <li
+                        class="flex flex-col items-center text-center group animate-fade-in-up"
+                        style="
+                            animation-delay: 400ms;
+                            animation-fill-mode: backwards;
+                        "
+                    >
+                        <figure
+                            class="relative mb-6 transition-transform duration-500 group-hover:-translate-y-2"
+                        >
+                            <div
+                                class="absolute inset-0 rounded-full bg-primary/10 blur-xl group-hover:bg-primary/20 transition-all duration-500"
+                            ></div>
+                            <div
+                                class="relative flex items-center justify-center w-30 h-30 mx-auto rounded-full bg-surface border border-outline/30 shadow-elevation-1"
+                            >
+                                <svg
+                                    class="w-15 h-15 text-primary"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="1.5"
+                                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                                    ></path>
+                                </svg>
+                            </div>
+                        </figure>
+                        <h3
+                            class="mb-3 text-xl font-bold transition-colors text-on-surface group-hover:text-primary"
+                        >
+                            Quality Assurance
+                        </h3>
+                        <p class="text-sm leading-relaxed text-secondary">
+                            Employ rigorous quality control procedures to ensure
+                            the consistent production of high-quality parts.
+                        </p>
+                    </li>
+
+                    <li
+                        class="flex flex-col items-center text-center group animate-fade-in-up"
+                        style="
+                            animation-delay: 600ms;
+                            animation-fill-mode: backwards;
+                        "
+                    >
+                        <figure
+                            class="relative mb-6 transition-transform duration-500 group-hover:-translate-y-2"
+                        >
+                            <div
+                                class="absolute inset-0 rounded-full bg-primary/10 blur-xl group-hover:bg-primary/20 transition-all duration-500"
+                            ></div>
+                            <div
+                                class="relative flex items-center justify-center w-30 h-30 mx-auto rounded-full bg-surface border border-outline/30 shadow-elevation-1"
+                            >
+                                <svg
+                                    class="w-15 h-15 text-primary"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="1.5"
+                                        d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"
+                                    ></path>
+                                </svg>
+                            </div>
+                        </figure>
+                        <h3
+                            class="mb-3 text-xl font-bold transition-colors text-on-surface group-hover:text-primary"
+                        >
+                            Customer Service
+                        </h3>
+                        <p class="text-sm leading-relaxed text-secondary">
+                            Our dedicated customer service team is always
+                            available to assist you with your inquiries.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section
+            class="py-20 bg-[url(../img/index-prod-bg.jpg)] border-t border-outline/10"
+        >
+            <div class="custom-container relative">
+                <div class="mb-12 flex flex-col items-center text-center">
+                    <h3
+                        class="text-sm font-bold tracking-[0.2em] text-primary uppercase mb-2"
+                    >
+                        PRODUCTS
+                    </h3>
+                    <h2 class="text-3xl font-bold text-on-surface">
+                        Popular Items
+                    </h2>
+                    <div class="w-16 h-1 mt-4 bg-primary rounded-full"></div>
                 </div>
 
-                <div class="flex gap-5 flex-wrap justify-center">
-                    <a href="./home.html" target="_blank">
-                        <button class="btn-solid">Home</button>
-                    </a>
-                    <a href="./contact.html" target="_blank">
-                        <button class="btn-solid">Contact</button>
-                    </a>
-                    <a href="./product.html" target="_blank">
-                        <button class="btn-solid">Product</button>
-                    </a>
-                    <a href="./product-item.html" target="_blank">
-                        <button class="btn-solid">Product Item</button>
-                    </a>
-                    <a href="./cart.html" target="_blank">
-                        <button class="btn-solid">Cart</button>
-                    </a>
-                    <a href="./pay.html" target="_blank">
-                        <button class="btn-solid">Pay</button>
-                    </a>
-                    <a href="./movie.html" target="_blank">
-                        <button class="btn-solid">Movie</button>
-                    </a>
+                <div class="relative group/slider">
+                    <button
+                        id="prod-prev"
+                        class="absolute -left-4 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-surface border border-outline/20 text-on-surface shadow-elevation-1 transition-opacity disabled:opacity-30 hover:bg-primary hover:text-on-primary"
+                    >
+                        <svg
+                            class="w-6 h-6"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M15 19l-7-7 7-7"
+                            ></path>
+                        </svg>
+                    </button>
+
+                    <div
+                        id="product-slider"
+                        class="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-8 scrollbar-hide"
+                    ></div>
+
+                    <button
+                        id="prod-next"
+                        class="absolute -right-4 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-surface border border-outline/20 text-on-surface shadow-elevation-1 transition-opacity hover:bg-primary hover:text-on-primary"
+                    >
+                        <svg
+                            class="w-6 h-6"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M9 5l7 7-7 7"
+                            ></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                    // 1. 定義產品資料 (您可以從後端 API 抓取，或是直接在這裡設定)
+                    const products = [
+                        {
+                            title: "CNC Turning Machining Parts",
+                            code: "CNC004",
+                            img: "./img/product/CNC_Turning_Machining_Parts.jpg",
+                            link: "product_detail.php",
+                        },
+                        {
+                            title: "Lighting Parts Lamp Caps",
+                            code: "LT000",
+                            img: "./img/product/Lighting_Parts_Lamp_Caps_and_Base.jpg",
+                            link: "product_detail.php",
+                        },
+                        {
+                            title: "Photoelectric Industrial Parts",
+                            code: "PH000",
+                            img: "./img/product/Photoelectric_and_Optical_Industrial_Parts.jpg",
+                            link: "product_detail.php",
+                        },
+                        {
+                            title: "Sliding Head CNC Lathe",
+                            code: "CNC001",
+                            img: "./img/product/Sliding_Head_CNC_Lathe_Machining_Parts.jpg",
+                            link: "product_detail.php",
+                        },
+                        {
+                            title: "CNC Vertical Machining",
+                            code: "CNC002",
+                            img: "./img/product/CNC_Vertical_Machining_Parts.jpg",
+                            link: "product_detail.php",
+                        },
+                        {
+                            title: "CNC Milling Machining",
+                            code: "CNC003",
+                            img: "./img/product/CNC_Milling_Machining_Parts.jpg",
+                            link: "product_detail.php",
+                        },
+                    ];
+
+                    // 2. 渲染函數
+                    const sliderContainer =
+                        document.getElementById("product-slider");
+
+                    const renderProducts = () => {
+                        const html = products
+                            .map(
+                                (product) => `
+            <div class="snap-start shrink-0 w-[calc(50%-12px)] md:w-[calc(33.33%-16px)] lg:w-[calc(25%-18px)]">
+                <a href="${product.link}" class="block group h-full">
+                    <div class="prodBox h-full bg-container rounded-lg overflow-hidden border border-outline/10 transition-all duration-300 hover:shadow-elevation-2 hover:-translate-y-1">
+                        <figure class="relative aspect-square overflow-hidden bg-white">
+                            <img src="${product.img}" alt="${product.title}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy">
+                            <div class="absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/10"></div>
+                        </figure>
+                        <div class="p-4 text-center">
+                            <h3 class="text-sm md:text-base font-bold text-on-surface transition-colors duration-300 group-hover:text-primary">
+                                ${product.title}<br>
+                                <span class="text-xs font-normal text-secondary block mt-1">${product.code}</span>
+                            </h3>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        `,
+                            )
+                            .join(""); // 將陣列合併成一個大字串
+
+                        sliderContainer.innerHTML = html;
+                    };
+
+                    // 執行渲染
+                    renderProducts();
+
+                    // 3. 左右按鈕控制 (這裡維持原本的邏輯)
+                    const prevBtn = document.getElementById("prod-prev");
+                    const nextBtn = document.getElementById("prod-next");
+
+                    const getScrollAmount = () => {
+                        // 抓取第一個卡片的寬度 + gap (24px)
+                        const firstCard = sliderContainer.firstElementChild;
+                        return firstCard ? firstCard.offsetWidth + 24 : 300;
+                    };
+
+                    nextBtn.addEventListener("click", () => {
+                        sliderContainer.scrollBy({
+                            left: getScrollAmount(),
+                            behavior: "smooth",
+                        });
+                    });
+
+                    prevBtn.addEventListener("click", () => {
+                        sliderContainer.scrollBy({
+                            left: -getScrollAmount(),
+                            behavior: "smooth",
+                        });
+                    });
+                });
+            </script>
+        </section>
+
+        <section
+            class="py-28 theme-light bg-[url(../img/index-bg.jpg)] bg-cover bg-center bg-no-repeat"
+        >
+            <div class="custom-container">
+                <div
+                    class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center"
+                >
+                    <div
+                        class="w-full lg:w-1/2 flex flex-col space-y-8 order-2 lg:order-1"
+                    >
+                        <div>
+                            <h3
+                                class="text-sm font-bold tracking-[0.15em] text-primary uppercase mb-2"
+                            >
+                                SERVICE
+                            </h3>
+                            <h2
+                                class="text-3xl md:text-4xl font-bold text-on-surface leading-tight"
+                            >
+                                We offer One-stop <br />
+                                manufacturing solution.
+                            </h2>
+                            <div
+                                class="w-20 h-1 mt-6 bg-primary rounded-full"
+                            ></div>
+                        </div>
+
+                        <div class="space-y-6 text-secondary">
+                            <p class="text-lg font-medium text-on-surface">
+                                Working Process We Do
+                            </p>
+
+                            <div
+                                class="p-6 rounded-lg bg-container border border-outline/20"
+                            >
+                                <p
+                                    class="font-bold text-primary mb-3 flex items-center gap-2"
+                                >
+                                    <span
+                                        class="flex items-center justify-center w-6 h-6 text-xs border rounded-full border-primary"
+                                        >1</span
+                                    >
+                                    MAIN WORK
+                                </p>
+                                <ul
+                                    class="list-disc list-inside space-y-1 pl-2 marker:text-primary"
+                                >
+                                    <li>CNC milling & turning machining</li>
+                                </ul>
+                            </div>
+
+                            <div
+                                class="p-6 rounded-lg bg-container border border-outline/20"
+                            >
+                                <p
+                                    class="font-bold text-primary mb-3 flex items-center gap-2"
+                                >
+                                    <span
+                                        class="flex items-center justify-center w-6 h-6 text-xs border rounded-full border-primary"
+                                        >2</span
+                                    >
+                                    MORE SERVICE
+                                </p>
+                                <ul
+                                    class="grid grid-cols-2 gap-2 text-sm md:text-base"
+                                >
+                                    <li class="flex items-center gap-2">
+                                        <span
+                                            class="w-1.5 h-1.5 bg-primary/50 rounded-full"
+                                        ></span
+                                        >Vibrating
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <span
+                                            class="w-1.5 h-1.5 bg-primary/50 rounded-full"
+                                        ></span
+                                        >Sandblasting
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <span
+                                            class="w-1.5 h-1.5 bg-primary/50 rounded-full"
+                                        ></span
+                                        >Grinding
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <span
+                                            class="w-1.5 h-1.5 bg-primary/50 rounded-full"
+                                        ></span
+                                        >Laser Engraving
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <span
+                                            class="w-1.5 h-1.5 bg-primary/50 rounded-full"
+                                        ></span
+                                        >Anodizing
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <span
+                                            class="w-1.5 h-1.5 bg-primary/50 rounded-full"
+                                        ></span
+                                        >Plating
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <span
+                                            class="w-1.5 h-1.5 bg-primary/50 rounded-full"
+                                        ></span
+                                        >Painting
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="pt-2">
+                            <a
+                                href="about.php"
+                                class="btn-primary inline-flex items-center gap-2"
+                            >
+                                LEARN MORE
+                                <svg
+                                    class="w-4 h-4"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M14 5l7 7m0 0l-7 7m7-7H3"
+                                    ></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div
+                        class="w-full lg:w-1/2 relative order-1 lg:order-2 group"
+                    >
+                        <img
+                            src="./img/index-img.png"
+                            class="w-full h-auto object-cover"
+                        />
+                    </div>
                 </div>
             </div>
         </section>
