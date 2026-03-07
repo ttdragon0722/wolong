@@ -314,7 +314,7 @@
                     <h1
                         class="solid-text mb-4 font-black text-4xl md:text-6xl lg:text-7xl"
                     >
-                        Contact
+                        Cart
                     </h1>
                     <h2
                         class="font-bold text-lg md:text-2xl lg:text-2xl text-on-primary"
@@ -328,89 +328,116 @@
         <section class="py-8 md:py-12 theme-light bg-surface text-on-surface">
             <div class="custom-container">
                 <div class="text-center my-12">
-                    <h2 class="page-title-h2 text-primary my-12">
-                        Contact Form
-                    </h2>
+                    <h2 class="page-title-h2 text-primary my-12">購物車內容</h2>
                     <p>
                         If you have any inquiries or questions, please complete
                         the following form and we will get in touch with you
                         soon.
                     </p>
                 </div>
-                <form>
-                    <div
-                        class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 mb-6"
-                    >
-                        <div class="flex flex-col md:flex-row md:items-center">
-                            <label class="form-label-side">First Name</label>
-                            <div class="form-input-wrapper">
-                                <input
-                                    type="text"
-                                    class="form-input-standard"
-                                    placeholder="John"
-                                />
-                            </div>
-                        </div>
+                <div class="table-responsive">
+                    <table class="spec-table">
+                        <thead>
+                            <tr>
+                                <th>項目</th>
+                                <th class="text-center">價格</th>
+                                <th class="text-center">數量</th>
+                                <th class="text-center">小計</th>
+                                <th class="text-center">取消</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="flex items-center gap-3">
+                                        <img
+                                            src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=100&h=100&fit=crop"
+                                            alt="Product"
+                                            class="w-12 h-12 rounded object-cover border border-gray-100"
+                                        />
+                                        <span class="font-medium"
+                                            >極簡風格智慧手錶</span
+                                        >
+                                    </div>
+                                </td>
+                                <td class="text-center">NT$ 4,500</td>
+                                <td class="text-center">
+                                    <input
+                                        type="number"
+                                        value="1"
+                                        min="1"
+                                        class="w-16 border border-gray-300 rounded px-2 py-1 focus:outline-none focus:ring-1 focus:ring-primary"
+                                    />
+                                </td>
+                                <td class="text-center font-bold text-primary">
+                                    NT$ 4,500
+                                </td>
+                                <td class="text-center">
+                                    <button
+                                        class="text-gray-400 hover:text-red-500 transition-colors"
+                                    >
+                                        取消
+                                    </button>
+                                </td>
+                            </tr>
 
-                        <div class="flex flex-col md:flex-row md:items-center">
-                            <label class="form-label-side">Last Name</label>
-                            <div class="form-input-wrapper">
-                                <input
-                                    type="text"
-                                    class="form-input-standard"
-                                    placeholder="Doe"
-                                />
-                            </div>
-                        </div>
-                    </div>
+                            <tr>
+                                <td>
+                                    <div class="flex items-center gap-3">
+                                        <img
+                                            src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=100&h=100&fit=crop"
+                                            alt="Product"
+                                            class="w-12 h-12 rounded object-cover border border-gray-100"
+                                        />
+                                        <span class="font-medium"
+                                            >主動降噪無線耳機</span
+                                        >
+                                    </div>
+                                </td>
+                                <td class="text-center">NT$ 3,200</td>
+                                <td class="text-center">
+                                    <input
+                                        type="number"
+                                        value="2"
+                                        min="1"
+                                        class="w-16 border border-gray-300 rounded px-2 py-1 focus:outline-none focus:ring-1 focus:ring-primary"
+                                    />
+                                </td>
+                                <td class="text-center font-bold text-primary">
+                                    NT$ 6,400
+                                </td>
+                                <td class="text-center">
+                                    <button
+                                        class="text-gray-400 hover:text-red-500 transition-colors"
+                                    >
+                                        取消
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
 
-                    <div
-                        class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 mb-6"
-                    >
-                        <div class="flex flex-col md:flex-row md:items-center">
-                            <label class="form-label-side">Email</label>
-                            <div class="form-input-wrapper">
-                                <input
-                                    type="email"
-                                    class="form-input-standard"
-                                    placeholder="example@mail.com"
-                                />
-                            </div>
-                        </div>
-
-                        <div class="flex flex-col md:flex-row md:items-center">
-                            <label class="form-label-side">Phone</label>
-                            <div class="form-input-wrapper">
-                                <input
-                                    type="tel"
-                                    class="form-input-standard"
-                                    placeholder="+886..."
-                                />
-                            </div>
-                        </div>
-                    </div>
-
-                    <div
-                        class="flex flex-col md:flex-row md:items-start mb-6"
-                    >
-                        <label class="form-label-side md:mt-3">Message</label>
-                        <div class="form-input-wrapper md:flex-1">
-                            <textarea
-                                class="form-input-standard w-full min-h-[120px]"
-                                placeholder="How can we help?"
-                            ></textarea>
-                        </div>
-                    </div>
-
-                    <div class="flex justify-end">
-                        <button
-                            type="submit"
-                            class="w-full md:w-auto px-12 py-4 bg-black text-white font-bold uppercase tracking-widest hover:bg-gray-800 transition-all"
-                        >
-                            Send Request
-                        </button>
-                    </div>
-                </form>
+                        <tfoot>
+                            <tr class="bg-gray-100">
+                                <td
+                                    colspan="3"
+                                    class="text-right font-bold py-4"
+                                >
+                                    總計金額：
+                                </td>
+                                <td
+                                    class="text-center font-black text-lg text-primary"
+                                >
+                                    NT$ 10,900
+                                </td>
+                                <td></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <div class="flex justify-center items-center gap-4">
+                    <button class="btn-primary">繼續購物</button>
+                    <button class="btn-primary">結帳</button>
+                </div>
             </div>
         </section>
 

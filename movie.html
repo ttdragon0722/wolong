@@ -303,7 +303,7 @@
             class="relative w-full h-[20vh] sm:h-[32vh] md:h-[44vh] overflow-hidden bg-surface text-on-primary py-20"
         >
             <img
-                src="img/banner-03.jpg"
+                src="img/index-banner.jpg"
                 alt="Banner 1"
                 class="absolute inset-0 w-full h-full object-cover z-0"
             />
@@ -314,7 +314,7 @@
                     <h1
                         class="solid-text mb-4 font-black text-4xl md:text-6xl lg:text-7xl"
                     >
-                        Contact
+                        Movie
                     </h1>
                     <h2
                         class="font-bold text-lg md:text-2xl lg:text-2xl text-on-primary"
@@ -325,92 +325,234 @@
             </div>
         </div>
 
-        <section class="py-8 md:py-12 theme-light bg-surface text-on-surface">
-            <div class="custom-container">
-                <div class="text-center my-12">
-                    <h2 class="page-title-h2 text-primary my-12">
-                        Contact Form
-                    </h2>
-                    <p>
-                        If you have any inquiries or questions, please complete
-                        the following form and we will get in touch with you
-                        soon.
-                    </p>
+        <div class="accordion-container min-[1000px]:hidden">
+            <input type="checkbox" id="accordion-trigger" class="hidden" />
+            <label for="accordion-trigger" class="accordion-head">
+                <span>Product Categories</span>
+                <svg
+                    class="arrow-icon w-4 h-4 transition-transform duration-300"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                >
+                    <path
+                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    />
+                </svg>
+            </label>
+
+            <div class="accordion-body">
+                <a
+                    href="product_CNC_Machining_Parts.php"
+                    class="accordion-link group"
+                >
+                    <span>CNC Machining Parts</span>
+                    <svg
+                        class="w-2 h-2 text-black"
+                        viewBox="0 0 10 16"
+                        fill="currentColor"
+                    >
+                        <path d="M10 8L0 16V0L10 8Z" />
+                    </svg>
+                </a>
+
+                <a
+                    href="product_Aluminum_parts.php"
+                    class="accordion-link group"
+                >
+                    <span>Aluminum parts</span>
+                    <svg
+                        class="w-2 h-2 text-black"
+                        viewBox="0 0 10 16"
+                        fill="currentColor"
+                    >
+                        <path d="M10 8L0 16V0L10 8Z" />
+                    </svg>
+                </a>
+
+                <a
+                    href="product_Automotive_Motorcycle.php"
+                    class="accordion-link group"
+                >
+                    <span>Automotive │ Motorcycle</span>
+                    <svg
+                        class="w-2 h-2 text-black"
+                        viewBox="0 0 10 16"
+                        fill="currentColor"
+                    >
+                        <path d="M10 8L0 16V0L10 8Z" />
+                    </svg>
+                </a>
+
+                <a
+                    href="product_Special_Bolts_and_Screws.php"
+                    class="accordion-link group"
+                >
+                    <span>Special Bolts and Screws</span>
+                    <svg
+                        class="w-2 h-2 text-black"
+                        viewBox="0 0 10 16"
+                        fill="currentColor"
+                    >
+                        <path d="M10 8L0 16V0L10 8Z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <section class="py-12 theme-light bg-surface text-on-surface">
+            <div class="custom-container flex gap-12 max-[1000px]:flex-col">
+                <div class="w-68 max-[1000px]:hidden">
+                    <h1 class="sidebar-title mb-8">MOVIES</h1>
+                    <div class="sidebar-container">
+                        <a href="#" class="sidebar-item group">
+                            <span>CNC Machining Parts</span>
+                            <svg
+                                class="icon-svg w-3 h-3"
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 10 16"
+                                fill="currentColor"
+                            >
+                                <path d="M10 8L0 16V0L10 8Z" />
+                            </svg>
+                        </a>
+
+                        <a href="#" class="sidebar-item group">
+                            <span>Aluminum Parts</span>
+                            <svg
+                                class="icon-svg w-3 h-3"
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 10 16"
+                                fill="currentColor"
+                            >
+                                <path d="M10 8L0 16V0L10 8Z" />
+                            </svg>
+                        </a>
+
+                        <a href="#" class="sidebar-item group">
+                            <span>Automotive</span>
+                            <svg
+                                class="icon-svg w-3 h-3"
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 10 16"
+                                fill="currentColor"
+                            >
+                                <path d="M10 8L0 16V0L10 8Z" />
+                            </svg>
+                        </a>
+
+                        <a href="#" class="sidebar-item group">
+                            <span>Bicycle Parts</span>
+                            <svg
+                                class="icon-svg w-3 h-3"
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 10 16"
+                                fill="currentColor"
+                            >
+                                <path d="M10 8L0 16V0L10 8Z" />
+                            </svg>
+                        </a>
+
+                        <a href="#" class="sidebar-item group">
+                            <span>Lighting Parts</span>
+                            <svg
+                                class="icon-svg w-3 h-3"
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 10 16"
+                                fill="currentColor"
+                            >
+                                <path d="M10 8L0 16V0L10 8Z" />
+                            </svg>
+                        </a>
+                    </div>
                 </div>
-                <form>
-                    <div
-                        class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 mb-6"
+
+                <div class="flex-1">
+                    <h1 class="page-title-h3">架站教學</h1>
+
+                    <div class="movie-container">
+                        <a href="#" class="movie-card group">
+                            <div class="movie-inner">
+                                <div class="movie-image-wrapper">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?q=80&w=2070&auto=format&fit=crop"
+                                        alt="Movie Title"
+                                        class="movie-image group-hover:scale-105"
+                                    />
+                                </div>
+
+                                <h3 class="movie-title group-hover:text-primary ">
+                                    星際效應 (Interstellar)
+                                </h3>
+
+                                <div class="movie-line "></div>
+
+                                <p class="text-sm text-gray-400">
+                                    2014 • 科幻冒險
+                                </p>
+                            </div>
+                        </a>
+
+                        <a href="#" class="movie-card group">
+                            <div class="movie-inner">
+                                <div class="movie-image-wrapper">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=1925&auto=format&fit=crop"
+                                        alt="Movie Title"
+                                        class="movie-image group-hover:scale-105"
+                                    />
+                                </div>
+
+                                <h3 class="movie-title group-hover:text-primary ">
+                                    星際效應 (Interstellar)
+                                </h3>
+
+                                <div class="movie-line "></div>
+
+                                <p class="text-sm text-gray-400">
+                                    2014 • 科幻冒險
+                                </p>
+                            </div>
+                        </a>
+                        <a href="#" class="movie-card group">
+                            <div class="movie-inner">
+                                <div class="movie-image-wrapper">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=1925&auto=format&fit=crop"
+                                        alt="Movie Title"
+                                        class="movie-image group-hover:scale-105"
+                                    />
+                                </div>
+
+                                <h3 class="movie-title group-hover:text-primary ">
+                                    星際效應 (Interstellar)
+                                </h3>
+
+                                <div class="movie-line "></div>
+
+                                <p class="text-sm text-gray-400">
+                                    2014 • 科幻冒險
+                                </p>
+                            </div>
+                        </a>
+
+                    </div>
+                    <nav
+                        class="pagination-wrapper"
+                        aria-label="Product pagination"
                     >
-                        <div class="flex flex-col md:flex-row md:items-center">
-                            <label class="form-label-side">First Name</label>
-                            <div class="form-input-wrapper">
-                                <input
-                                    type="text"
-                                    class="form-input-standard"
-                                    placeholder="John"
-                                />
-                            </div>
-                        </div>
+                        <a href="#" class="page-link disabled"> &lt; </a>
 
-                        <div class="flex flex-col md:flex-row md:items-center">
-                            <label class="form-label-side">Last Name</label>
-                            <div class="form-input-wrapper">
-                                <input
-                                    type="text"
-                                    class="form-input-standard"
-                                    placeholder="Doe"
-                                />
-                            </div>
-                        </div>
-                    </div>
+                        <a href="#" class="page-link active">1</a>
+                        <a href="#" class="page-link">2</a>
+                        <a href="#" class="page-link">3</a>
+                        <a href="#" class="page-link">4</a>
 
-                    <div
-                        class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 mb-6"
-                    >
-                        <div class="flex flex-col md:flex-row md:items-center">
-                            <label class="form-label-side">Email</label>
-                            <div class="form-input-wrapper">
-                                <input
-                                    type="email"
-                                    class="form-input-standard"
-                                    placeholder="example@mail.com"
-                                />
-                            </div>
-                        </div>
+                        <span class="px-2 text-gray-400">...</span>
 
-                        <div class="flex flex-col md:flex-row md:items-center">
-                            <label class="form-label-side">Phone</label>
-                            <div class="form-input-wrapper">
-                                <input
-                                    type="tel"
-                                    class="form-input-standard"
-                                    placeholder="+886..."
-                                />
-                            </div>
-                        </div>
-                    </div>
+                        <a href="#" class="page-link">12</a>
 
-                    <div
-                        class="flex flex-col md:flex-row md:items-start mb-6"
-                    >
-                        <label class="form-label-side md:mt-3">Message</label>
-                        <div class="form-input-wrapper md:flex-1">
-                            <textarea
-                                class="form-input-standard w-full min-h-[120px]"
-                                placeholder="How can we help?"
-                            ></textarea>
-                        </div>
-                    </div>
-
-                    <div class="flex justify-end">
-                        <button
-                            type="submit"
-                            class="w-full md:w-auto px-12 py-4 bg-black text-white font-bold uppercase tracking-widest hover:bg-gray-800 transition-all"
-                        >
-                            Send Request
-                        </button>
-                    </div>
-                </form>
+                        <a href="#" class="page-link"> &gt; </a>
+                    </nav>
+                </div>
             </div>
         </section>
 
