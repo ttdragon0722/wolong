@@ -65,7 +65,7 @@
         --color-secondary: #64748b; /* Slate-500 */
 
         /* 容器變成淺灰 */
-        --color-container: #f3f4f6; /* Gray-100 */
+        --color-container: #f5f5f5; /* Gray-100 */
 
         /* 邊框變淺 */
         --color-outline: #e2e8f0; /* Slate-200 */
@@ -347,13 +347,64 @@
         @apply text-primary font-bold text-3xl md:text-5xl;
     }
 
+    /* page title */
     .page-title-h1 {
         @apply text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl md:text-5xl lg:text-6xl;
+        /* 您原本沒有設定 margin-bottom，若需要可自行加上 @apply mb-6; */
+    }
+
+    .page-title-h2 {
+        @apply text-3xl font-bold tracking-tight text-slate-900 sm:text-3xl md:text-4xl lg:text-5xl;
+        @apply mb-5;
     }
 
     .page-title-h3 {
-        @apply text-xl font-bold tracking-tight text-slate-900 sm:text-2xl md:text-3xl;
+        @apply text-2xl font-bold tracking-tight text-slate-900 sm:text-2xl md:text-3xl;
         @apply mb-4;
+    }
+
+    .page-title-h4 {
+        @apply text-xl font-bold tracking-tight text-slate-900 sm:text-xl md:text-2xl;
+        @apply mb-3;
+    }
+
+    .page-title-h5 {
+        @apply text-lg font-semibold tracking-tight text-slate-900 sm:text-lg md:text-xl;
+        @apply mb-2;
+    }
+
+    /* 產品規格的段落通用樣式 */
+    .spec-p {
+        @apply text-black leading-relaxed mb-4 text-[15px] sm:text-base;
+    }
+
+    /* 表格的外層容器：處理 RWD 圓角與陰影 */
+    .table-responsive {
+        @apply w-full overflow-x-auto border border-gray-200 shadow-sm mb-6 bg-white;
+    }
+
+    /* 表格本體通用樣式 */
+    .spec-table {
+        @apply w-full text-sm sm:text-base text-left text-black border-collapse whitespace-nowrap;
+    }
+
+    /* 表格標題列 (th) */
+    .spec-table th {
+        @apply px-4 py-3 bg-primary text-on-primary font-bold uppercase tracking-wider border-b-2 border-primary/20;
+    }
+
+    /* 表格資料列 (td) */
+    .spec-table td {
+        @apply px-4 py-3 border-b border-gray-200 transition-colors duration-150;
+    }
+
+    /* 表格斑馬紋 (對應原本的 discolor) 與 Hover 效果 */
+    .spec-table tbody tr:nth-child(even) td {
+        @apply bg-gray-50;
+    }
+
+    .spec-table tbody tr:hover td {
+        @apply bg-primary/5 text-gray-900;
     }
 
     /* input */
@@ -449,6 +500,26 @@
            hover:opacity-90 active:scale-95 
            shadow-elevation-1 transition-all ease-(--ease-standard);
     }
+
+    .btn-solid {
+        @apply bg-primary text-white hover:bg-primary/90 hover:shadow transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+        @apply font-medium;
+        @apply py-4 px-8 rounded-lg shadow-sm inline-flex items-center;
+    }
+
+    .btn-outline {
+        @apply bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-white hover:shadow transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+        @apply font-medium;
+        @apply py-4 px-8 rounded-lg shadow-sm inline-flex items-center;
+    }
+
+    .back-btn {
+        @apply bg-black text-white hover:bg-gray-800 hover:shadow-md transition-all duration-200;
+        @apply focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2;
+        @apply font-semibold tracking-wider text-sm sm:text-base;
+        @apply py-4 px-16 shadow-sm inline-flex items-center justify-center gap-2;
+    }
+
 
     .form-control {
         @apply block w-full px-4 py-2.5 text-on-surface bg-container border border-outline/50 rounded-lg
