@@ -1,0 +1,703 @@
+<!doctype html>
+<html lang="zh-TW">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>YCT Precision - Theme</title>
+
+        <link href="./css/output.css" rel="stylesheet" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+
+    <body class="relative">
+        <header
+            id="navbar"
+            class="header-function w-full top-0 z-40 transition-all duration-300"
+        >
+            <nav class="custom-container">
+                <div class="flex items-center justify-between">
+                    <a
+                        href="#"
+                        class="flex items-center gap-2 text-2xl font-bold transition duration-300 group text-primary hover:opacity-80"
+                    >
+                        <div
+                            class="flex items-center justify-center w-8 h-8 text-xs font-black transition-transform rounded-sm bg-primary text-on-primary shadow-elevation-1 group-hover:scale-105"
+                        >
+                            YCT
+                        </div>
+                        <span>YCT Precision</span>
+                    </a>
+
+                    <div class="hidden space-x-8 md:flex md:items-center">
+                        <a href="#" class="nav-item">Home</a>
+                        <a href="#" class="nav-item">Company</a>
+
+                        <a href="#" class="nav-item">News</a>
+                        <a href="#" class="nav-item">Contact</a>
+
+                        <div
+                            class="group dropdown-btn"
+                            id="desktop-products-wrapper"
+                        >
+                            <button class="nav-item dropdown-text">
+                                Products
+                                <svg
+                                    class="dropdown-icon group-hover:rotate-180"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M19 9l-7 7-7-7"
+                                    ></path>
+                                </svg>
+                            </button>
+
+                            <div
+                                id="desktop-products-dropdown"
+                                class="dropdown-container group-hover:block"
+                            >
+                                <div class="dropdown-banner"></div>
+
+                                <a href="#" class="dropdown-item"
+                                    >All Products</a
+                                >
+                                <a href="#" class="dropdown-item"
+                                    >CNC Machining</a
+                                >
+                                <a href="#" class="dropdown-item">Milling</a>
+                                <a href="#" class="dropdown-item">Turning</a>
+                                <a href="#" class="dropdown-item">Drilling</a>
+                                <a href="#" class="dropdown-item"
+                                    >Surface Finish</a
+                                >
+                                <a href="#" class="dropdown-item">Anodizing</a>
+                                <a href="#" class="dropdown-item">Polishing</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center md:hidden">
+                        <button
+                            id="mobile-menu-btn"
+                            class="p-2 transition-colors rounded-full text-secondary hover:bg-container hover:text-primary focus:outline-none"
+                        >
+                            <svg
+                                class="w-6 h-6"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M4 6h16M4 12h16M4 18h16"
+                                ></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div
+            id="mobile-menu"
+            class="md:hidden border-navbar-border fixed w-full h-full top-0 left-0 bg-navbar-mobile-bg z-50 backdrop-blur-lg overflow-y-auto transition-opacity duration-300 opacity-0 pointer-events-none pb-10"
+        >
+            <div
+                class="sticky py-4 px-2 top-0 z-50 flex justify-end items-center"
+            >
+                <button
+                    id="mobile-menu-close-btn"
+                    class="p-2 text-white hover:text-gray-500 transition-colors duration-200"
+                >
+                    <svg
+                        class="w-6 h-6"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12"
+                        ></path>
+                    </svg>
+                </button>
+            </div>
+            <a href="#" class="mobile-nav-item">Home</a>
+            <a href="#" class="mobile-nav-item">Company</a>
+
+            <div>
+                <button
+                    id="mobile-products-btn"
+                    class="mobile-nav-item relative w-full"
+                >
+                    Products
+                    <div
+                        class="absolute top-0 right-2 h-full flex items-center"
+                    >
+                        <svg
+                            class="w-4 h-4 transition-transform duration-200 rotate-180"
+                            id="mobile-products-icon"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M19 9l-7 7-7-7"
+                            ></path>
+                        </svg>
+                    </div>
+                </button>
+
+                <div class="hidden flex-col">
+                    <a href="#" class="mobile-nav-second-item">Milling</a>
+                    <a href="#" class="mobile-nav-second-item">Turning</a>
+                    <a href="#" class="mobile-nav-second-item">Turning</a>
+                    <a href="#" class="mobile-nav-second-item">Turning</a>
+                    <a href="#" class="mobile-nav-second-item">Turning</a>
+                    <a href="#" class="mobile-nav-second-item">Turning</a>
+                    <a href="#" class="mobile-nav-second-item">Turning</a>
+                    <a href="#" class="mobile-nav-second-item">Turning</a>
+                    <a href="#" class="mobile-nav-second-item">Turning</a>
+                    <a href="#" class="mobile-nav-second-item">Drilling</a>
+                </div>
+            </div>
+
+            <a href="#" class="mobile-nav-item">News</a>
+            <a href="#" class="mobile-nav-item">Contact</a>
+        </div>
+
+        <button id="backToTop" class="back-to-top" aria-label="Back to top">
+            <span class="icon font-serif">&gt;</span>
+            <span class="text-label">TOP</span>
+        </button>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const backToTopBtn = document.getElementById("backToTop");
+
+                // 監聽滾動事件
+                window.addEventListener("scroll", () => {
+                    // 當頁面下滑超過 400px 時顯示，否則隱藏
+                    if (window.scrollY > 400) {
+                        backToTopBtn.classList.remove(
+                            "opacity-0",
+                            "invisible",
+                            "translate-y-10",
+                        );
+                        backToTopBtn.classList.add(
+                            "opacity-100",
+                            "visible",
+                            "translate-y-0",
+                        );
+                    } else {
+                        backToTopBtn.classList.add(
+                            "opacity-0",
+                            "invisible",
+                            "translate-y-10",
+                        );
+                        backToTopBtn.classList.remove(
+                            "opacity-100",
+                            "visible",
+                            "translate-y-0",
+                        );
+                    }
+                });
+
+                // 點擊事件：平滑回頂
+                backToTopBtn.addEventListener("click", () => {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: "smooth",
+                    });
+                });
+            });
+        </script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                // --- 1. Navbar Scroll 變色邏輯 ---
+                const navbar = document.getElementById("navbar");
+                function updateNavbar() {
+                    if (window.scrollY > 15) {
+                        navbar.classList.add("nav-bar-scrolling");
+                    } else {
+                        navbar.classList.remove("nav-bar-scrolling");
+                    }
+                }
+                window.addEventListener("scroll", updateNavbar);
+                updateNavbar(); // 初始化執行一次
+
+                // --- 2. Mobile Menu 主開關 (淡入淡出與鎖定背景滾動) ---
+                const menuBtn = document.getElementById("mobile-menu-btn");
+                const closeBtn = document.getElementById(
+                    "mobile-menu-close-btn",
+                );
+                const mobileMenu = document.getElementById("mobile-menu");
+
+                function openMenu() {
+                    // 顯示 Menu (淡入)
+                    mobileMenu.classList.remove(
+                        "opacity-0",
+                        "pointer-events-none",
+                    );
+                    mobileMenu.classList.add(
+                        "opacity-100",
+                        "pointer-events-auto",
+                    );
+                    // 鎖住背後頁面的 Scroll bar
+                    document.body.classList.add("overflow-hidden");
+                }
+
+                function closeMenu() {
+                    // 隱藏 Menu (淡出)
+                    mobileMenu.classList.remove(
+                        "opacity-100",
+                        "pointer-events-auto",
+                    );
+                    mobileMenu.classList.add(
+                        "opacity-0",
+                        "pointer-events-none",
+                    );
+                    // 釋放背後頁面的 Scroll bar
+                    document.body.classList.remove("overflow-hidden");
+                }
+
+                menuBtn.addEventListener("click", openMenu);
+                closeBtn.addEventListener("click", closeMenu);
+
+                // --- 3. Mobile Menu 內 Products 子選單邏輯 ---
+                const productsBtn = document.getElementById(
+                    "mobile-products-btn",
+                );
+                const productsIcon = document.getElementById(
+                    "mobile-products-icon",
+                );
+                const subMenu = productsBtn.nextElementSibling; // 取得下一個兄弟元素 (子選單容器)
+
+                productsBtn.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    // 切換子選單的顯示狀態
+                    subMenu.classList.toggle("hidden");
+                    subMenu.classList.toggle("flex");
+                    // 切換箭頭圖示動畫
+                    productsIcon.classList.toggle("rotate-180");
+                });
+            });
+        </script>
+
+        <div
+            class="relative w-full h-[20vh] sm:h-[32vh] md:h-[44vh] overflow-hidden bg-surface text-on-primary py-20"
+        >
+            <img
+                src="img/banner-03.jpg"
+                alt="Banner 1"
+                class="absolute inset-0 w-full h-full object-cover z-0"
+            />
+            <div
+                class="custom-container relative flex w-full h-full items-center z-10"
+            >
+                <div>
+                    <h1
+                        class="solid-text mb-4 font-black text-4xl md:text-6xl lg:text-7xl"
+                    >
+                        Contact
+                    </h1>
+                    <h2
+                        class="font-bold text-lg md:text-2xl lg:text-2xl text-on-primary"
+                    >
+                        One-stop manufacturing solution
+                    </h2>
+                </div>
+            </div>
+        </div>
+
+        <section class="py-8 md:py-12 theme-light bg-surface text-on-surface">
+            <div class="custom-container">
+                <div class="text-center my-12">
+                    <h2 class="page-title-h2 text-primary my-12">會員登入</h2>
+                    <p>
+                        If you have any inquiries or questions, please complete
+                        the following form and we will get in touch with you
+                        soon.
+                    </p>
+                </div>
+                <link
+                    rel="stylesheet"
+                    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+                    integrity="sha512-..."
+                    crossorigin="anonymous"
+                    referrerpolicy="no-referrer"
+                />
+
+                <div
+                    class="max-w-5xl mx-auto bg-white border border-[#C6C6C6] p-8 md:p-12 mb-10"
+                >
+                    <div
+                        class="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-10 md:gap-16 items-start"
+                    >
+                        <div class="w-full">
+                            <h2 class="form-section-title">Member Login</h2>
+
+                            <form
+                                action="./../funtion/login.php"
+                                method="post"
+                                name="form1"
+                                id="form1"
+                            >
+                                <div
+                                    class="social-login-buttons flex flex-col gap-3 mb-8"
+                                >
+                                    <a
+                                        class="line flex items-center justify-center gap-3 px-4 py-3 text-white bg-[#06c755] rounded-none hover:bg-opacity-90 transition-all font-bold tracking-widest text-[14px] uppercase no-underline"
+                                        href="https://ae2.okweb.asia/a0001/common/oauth/oauth_login.php?provider=line&amp;redirect=https%3A%2F%2Fae2.okweb.asia%2Fa0001%2F&amp;ad_title=a0001"
+                                    >
+                                        <i
+                                            class="fab fa-line text-lg w-6 text-center"
+                                        ></i>
+                                        LINE Login
+                                    </a>
+                                    <a
+                                        class="facebook flex items-center justify-center gap-3 px-4 py-3 text-white bg-[#4267B2] rounded-none hover:bg-opacity-90 transition-all font-bold tracking-widest text-[14px] uppercase no-underline"
+                                        href="https://ae2.okweb.asia/a0001/common/oauth/oauth_login.php?provider=facebook&amp;redirect=https%3A%2F%2Fae2.okweb.asia%2Fa0001%2F&amp;ad_title=a0001"
+                                    >
+                                        <i
+                                            class="fab fa-facebook-f text-lg w-6 text-center"
+                                        ></i>
+                                        Facebook Login
+                                    </a>
+                                    <a
+                                        class="yahoo flex items-center justify-center gap-3 px-4 py-3 text-white bg-[#720e9e] rounded-none hover:bg-opacity-90 transition-all font-bold tracking-widest text-[14px] uppercase no-underline"
+                                        href="https://ae2.okweb.asia/a0001/common/oauth/oauth_login.php?provider=yahoo&amp;redirect=https%3A%2F%2Fae2.okweb.asia%2Fa0001%2F&amp;ad_title=a0001"
+                                    >
+                                        <i
+                                            class="fab fa-yahoo text-lg w-6 text-center"
+                                        ></i>
+                                        Yahoo Login
+                                    </a>
+                                </div>
+
+                                <div
+                                    class="flex items-center mb-8 text-gray-400"
+                                >
+                                    <div
+                                        class="flex-grow border-t border-[#C6C6C6]"
+                                    ></div>
+                                    <span
+                                        class="px-4 text-xs font-bold uppercase tracking-widest"
+                                        >Or Email</span
+                                    >
+                                    <div
+                                        class="flex-grow border-t border-[#C6C6C6]"
+                                    ></div>
+                                </div>
+
+                                <div class="space-y-5">
+                                    <div class="flex flex-col">
+                                        <label class="form-label-top"
+                                            >Account</label
+                                        >
+                                        <input
+                                            name="logid"
+                                            type="text"
+                                            id="pwd22"
+                                            placeholder="Account ID"
+                                            class="form-input-standard"
+                                        />
+                                    </div>
+
+                                    <div class="flex flex-col relative">
+                                        <label class="form-label-top"
+                                            >Password</label
+                                        >
+                                        <input
+                                            name="pwd"
+                                            type="password"
+                                            id="pwd"
+                                            maxlength="30"
+                                            placeholder="••••••••"
+                                            class="form-input-standard pr-10"
+                                        />
+                                        <i
+                                            class="fas fa-eye absolute right-4 bottom-[14px] cursor-pointer text-gray-400 hover:text-black transition-colors"
+                                            id="togglePwd"
+                                        ></i>
+                                    </div>
+
+                                    <div
+                                        class="flex flex-col sm:flex-row gap-4 mt-6"
+                                    >
+                                        <input
+                                            type="submit"
+                                            name="login"
+                                            id="button"
+                                            value="Login"
+                                            class="w-full sm:flex-1 py-4 bg-black text-white font-bold tracking-[0.2em] uppercase transition-all duration-300 hover:bg-gray-800 active:scale-95 cursor-pointer rounded-none border border-black"
+                                        />
+
+                                        <input
+                                            type="reset"
+                                            name="login"
+                                            id="button2"
+                                            value="Reset"
+                                            class="w-full sm:flex-1 py-4 bg-white text-black font-bold tracking-[0.2em] uppercase transition-all duration-300 hover:bg-gray-100 active:scale-95 cursor-pointer rounded-none border border-[#C6C6C6]"
+                                        />
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div
+                            class="hidden md:flex flex-col items-center h-full pt-10"
+                        >
+                            <div class="w-[1px] h-full bg-[#C6C6C6]"></div>
+                        </div>
+                        <div class="w-full flex flex-col">
+                            <h2 class="form-section-title">Member Services</h2>
+
+                            <ul class="flex flex-col gap-2 mt-2">
+                                <li>
+                                    <a
+                                        href="./../member/main_join.php"
+                                        class="group flex items-center justify-between px-5 py-4 bg-gray-50 border-l-4 border-transparent hover:border-black hover:bg-gray-100 transition-all no-underline text-slate-700"
+                                    >
+                                        <span
+                                            class="font-bold tracking-widest uppercase text-sm group-hover:text-black"
+                                            >Register Account</span
+                                        >
+                                        <i
+                                            class="fas fa-chevron-right text-xs text-gray-400 group-hover:text-black transition-colors"
+                                        ></i>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a
+                                        href="javascript:alert('抱歉，您必須登入會員才可以修改個人基本資料喔~')"
+                                        class="group flex items-center justify-between px-5 py-4 bg-gray-50 border-l-4 border-transparent hover:border-black hover:bg-gray-100 transition-all no-underline text-slate-700"
+                                    >
+                                        <span
+                                            class="font-bold tracking-widest uppercase text-sm group-hover:text-black"
+                                            >Edit Profile</span
+                                        >
+                                        <i
+                                            class="fas fa-chevron-right text-xs text-gray-400 group-hover:text-black transition-colors"
+                                        ></i>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a
+                                        href="javascript:alert('抱歉，您必須登入會員才可以查詢訂單處理進度喔~')"
+                                        class="group flex items-center justify-between px-5 py-4 bg-gray-50 border-l-4 border-transparent hover:border-black hover:bg-gray-100 transition-all no-underline text-slate-700"
+                                    >
+                                        <span
+                                            class="font-bold tracking-widest uppercase text-sm group-hover:text-black"
+                                            >Order History</span
+                                        >
+                                        <i
+                                            class="fas fa-chevron-right text-xs text-gray-400 group-hover:text-black transition-colors"
+                                        ></i>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a
+                                        href="./../member/member_search.php"
+                                        class="group flex items-center justify-between px-5 py-4 bg-gray-50 border-l-4 border-transparent hover:border-black hover:bg-gray-100 transition-all no-underline text-slate-700"
+                                    >
+                                        <span
+                                            class="font-bold tracking-widest uppercase text-sm group-hover:text-black"
+                                            >Reset Password</span
+                                        >
+                                        <i
+                                            class="fas fa-chevron-right text-xs text-gray-400 group-hover:text-black transition-colors"
+                                        ></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <script type="text/javascript">
+                    const currentUrl = encodeURIComponent(
+                        "https://ae2.okweb.asia/a0001/",
+                    );
+                    const baseUrl =
+                        "https://ae2.okweb.asia/a0001/common/oauth/oauth_login.php";
+                    const adTitle = "a0001";
+                    const providers = [
+                        "google",
+                        "line",
+                        "facebook",
+                        "apple",
+                        "microsoft",
+                        "yahoo",
+                    ];
+
+                    providers.forEach((provider) => {
+                        const a = document.querySelector(
+                            `.social-login-buttons a.${provider}`,
+                        );
+                        if (a) {
+                            a.href = `${baseUrl}?provider=${provider}&redirect=${currentUrl}&ad_title=${adTitle}`;
+                        }
+                    });
+
+                    document
+                        .getElementById("togglePwd")
+                        .addEventListener("click", function () {
+                            const pwdInput = document.getElementById("pwd");
+                            pwdInput.type =
+                                pwdInput.type === "password"
+                                    ? "text"
+                                    : "password";
+                            this.classList.toggle("fa-eye");
+                            this.classList.toggle("fa-eye-slash");
+                        });
+                </script>
+            </div>
+        </section>
+
+        <footer
+            class="py-12 border-t bg-[url(../img/footer-bg.jpg)] bg-center border-outline/20 text-on-primary"
+        >
+            <div class="custom-container">
+                <div class="flex flex-col gap-12 lg:flex-row">
+                    <div class="w-full space-y-4 lg:w-1/3">
+                        <h2 class="text-3xl font-bold">YCT Precision</h2>
+                        <div class="space-y-1 text-secondary">
+                            <p class="font-medium">
+                                GU HUNG INTERNATIONAL TRADE CO., LTD.
+                            </p>
+                            <p class="font-medium">
+                                YUAN CHENG TONG PRECISION TECHNOLOGY LTD.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="w-full lg:w-2/3">
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3">
+                                <div class="mt-1 shrink-0 text-primary">
+                                    <svg
+                                        class="w-5 h-5"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                                        ></path>
+                                    </svg>
+                                </div>
+                                <span class="text-secondary">
+                                    Tel /
+                                    <a
+                                        href="tel:+886423397505"
+                                        class="transition-colors text-on-surface hover:text-primary"
+                                    >
+                                        886-4-2339-7505
+                                    </a>
+                                </span>
+                            </li>
+
+                            <li class="flex items-start gap-3">
+                                <div class="mt-1 shrink-0 text-primary">
+                                    <svg
+                                        class="w-5 h-5"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"
+                                        ></path>
+                                    </svg>
+                                </div>
+                                <span class="text-secondary">
+                                    Fax / 886-4-2339-7556
+                                </span>
+                            </li>
+
+                            <li class="flex items-start gap-3">
+                                <div class="mt-1 shrink-0 text-primary">
+                                    <svg
+                                        class="w-5 h-5"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                                        ></path>
+                                    </svg>
+                                </div>
+                                <span class="text-secondary">
+                                    E-mail /
+                                    <a
+                                        href="mailto:info@yctpt.com"
+                                        class="transition-colors text-on-surface hover:text-primary"
+                                    >
+                                        info@yctpt.com
+                                    </a>
+                                </span>
+                            </li>
+
+                            <li class="flex items-start gap-3">
+                                <div class="mt-1 shrink-0 text-primary">
+                                    <svg
+                                        class="w-5 h-5"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                                        ></path>
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                                        ></path>
+                                    </svg>
+                                </div>
+                                <span class="text-secondary">
+                                    No.78, Xinyi S. St., South Dist., Taichung
+                                    City 402, Taiwan (R.O.C.)
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
