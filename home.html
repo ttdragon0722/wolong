@@ -37,10 +37,6 @@
                     <div class="hidden space-x-8 md:flex md:items-center">
                         <a href="#" class="nav-item">Home</a>
                         <a href="#" class="nav-item">Company</a>
-
-                        <a href="#" class="nav-item">News</a>
-                        <a href="#" class="nav-item">Contact</a>
-
                         <div
                             class="group dropdown-btn"
                             id="desktop-products-wrapper"
@@ -67,23 +63,128 @@
                                 class="dropdown-container group-hover:block"
                             >
                                 <div class="dropdown-banner"></div>
-
                                 <a href="#" class="dropdown-item"
                                     >All Products</a
                                 >
-                                <a href="#" class="dropdown-item"
-                                    >CNC Machining</a
+
+                                <div
+                                    class="group/sub relative desktop-sub-trigger"
                                 >
-                                <a href="#" class="dropdown-item">Milling</a>
-                                <a href="#" class="dropdown-item">Turning</a>
-                                <a href="#" class="dropdown-item">Drilling</a>
+                                    <button
+                                        class="dropdown-item w-full flex items-center justify-between"
+                                    >
+                                        CNC Machining
+                                        <svg
+                                            class="w-4 h-4 -rotate-90 text-gray-400"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="2"
+                                                d="M19 9l-7 7-7-7"
+                                            ></path>
+                                        </svg>
+                                    </button>
+
+                                    <div
+                                        class="dropdown-sub-container group-hover/sub:block"
+                                    >
+                                        <div class="dropdown-sub-banner"></div>
+                                        <a href="#" class="dropdown-item"
+                                            >Milling</a
+                                        >
+                                        <a href="#" class="dropdown-item"
+                                            >Turning</a
+                                        >
+                                        <a href="#" class="dropdown-item"
+                                            >Drilling</a
+                                        >
+                                    </div>
+                                </div>
+
                                 <a href="#" class="dropdown-item"
                                     >Surface Finish</a
                                 >
-                                <a href="#" class="dropdown-item">Anodizing</a>
-                                <a href="#" class="dropdown-item">Polishing</a>
                             </div>
                         </div>
+                        <div
+                            class="group dropdown-btn"
+                            id="desktop-products-wrapper"
+                        >
+                            <button class="nav-item dropdown-text">
+                                Products
+                                <svg
+                                    class="dropdown-icon group-hover:rotate-180"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M19 9l-7 7-7-7"
+                                    ></path>
+                                </svg>
+                            </button>
+
+                            <div
+                                id="desktop-products-dropdown"
+                                class="dropdown-container group-hover:block"
+                            >
+                                <div class="dropdown-banner"></div>
+                                <a href="#" class="dropdown-item"
+                                    >All Products</a
+                                >
+
+                                <div
+                                    class="group/sub relative desktop-sub-trigger"
+                                >
+                                    <button
+                                        class="dropdown-item w-full flex items-center justify-between"
+                                    >
+                                        CNC Machining
+                                        <svg
+                                            class="w-4 h-4 -rotate-90 text-gray-400"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="2"
+                                                d="M19 9l-7 7-7-7"
+                                            ></path>
+                                        </svg>
+                                    </button>
+
+                                    <div
+                                        class="dropdown-sub-container group-hover/sub:block"
+                                    >
+                                        <div class="dropdown-sub-banner"></div>
+                                        <a href="#" class="dropdown-item"
+                                            >Milling</a
+                                        >
+                                        <a href="#" class="dropdown-item"
+                                            >Turning</a
+                                        >
+                                        <a href="#" class="dropdown-item"
+                                            >Drilling</a
+                                        >
+                                    </div>
+                                </div>
+
+                                <a href="#" class="dropdown-item"
+                                    >Surface Finish</a
+                                >
+                            </div>
+                        </div>
+                        <a href="#" class="nav-item">News</a>
+                        <a href="#" class="nav-item">Contact</a>
                     </div>
 
                     <div class="flex items-center md:hidden">
@@ -109,6 +210,7 @@
                 </div>
             </nav>
         </header>
+
         <div
             id="mobile-menu"
             class="md:hidden border-navbar-border fixed w-full h-full top-0 left-0 bg-navbar-mobile-bg z-50 backdrop-blur-lg overflow-y-auto transition-opacity duration-300 opacity-0 pointer-events-none pb-10"
@@ -140,16 +242,14 @@
 
             <div>
                 <button
-                    id="mobile-products-btn"
-                    class="mobile-nav-item relative w-full"
+                    class="mobile-nav-item relative w-full mobile-toggle-btn"
                 >
                     Products
                     <div
                         class="absolute top-0 right-2 h-full flex items-center"
                     >
                         <svg
-                            class="w-4 h-4 transition-transform duration-200 rotate-180"
-                            id="mobile-products-icon"
+                            class="w-4 h-4 transition-transform duration-200 rotate-180 toggle-icon"
                             fill="none"
                             stroke="currentColor"
                             viewBox="0 0 24 24"
@@ -164,17 +264,50 @@
                     </div>
                 </button>
 
-                <div class="hidden flex-col">
-                    <a href="#" class="mobile-nav-second-item">Milling</a>
-                    <a href="#" class="mobile-nav-second-item">Turning</a>
-                    <a href="#" class="mobile-nav-second-item">Turning</a>
-                    <a href="#" class="mobile-nav-second-item">Turning</a>
-                    <a href="#" class="mobile-nav-second-item">Turning</a>
-                    <a href="#" class="mobile-nav-second-item">Turning</a>
-                    <a href="#" class="mobile-nav-second-item">Turning</a>
-                    <a href="#" class="mobile-nav-second-item">Turning</a>
-                    <a href="#" class="mobile-nav-second-item">Turning</a>
-                    <a href="#" class="mobile-nav-second-item">Drilling</a>
+                <div class="hidden flex-col bg-container">
+                    <a href="#" class="mobile-nav-second-item">All Products</a>
+
+                    <div>
+                        <button
+                            class="mobile-nav-second-item relative w-full mobile-toggle-btn border-t border-white/5"
+                        >
+                            CNC Machining
+                            <div
+                                class="absolute top-0 right-4 h-full flex items-center"
+                            >
+                                <svg
+                                    class="w-4 h-4 transition-transform duration-200 rotate-180 toggle-icon"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M19 9l-7 7-7-7"
+                                    ></path>
+                                </svg>
+                            </div>
+                        </button>
+                        <div class="hidden flex-col bg-black/20">
+                            <a href="#" class="mobile-nav-third-item"
+                                >Milling</a
+                            >
+                            <a href="#" class="mobile-nav-third-item"
+                                >Turning</a
+                            >
+                            <a href="#" class="mobile-nav-third-item"
+                                >Drilling</a
+                            >
+                        </div>
+                    </div>
+
+                    <a
+                        href="#"
+                        class="mobile-nav-second-item border-t border-white/5"
+                        >Surface Finish</a
+                    >
                 </div>
             </div>
 
@@ -182,79 +315,7 @@
             <a href="#" class="mobile-nav-item">Contact</a>
         </div>
 
-        <script>
-            document.addEventListener("DOMContentLoaded", function () {
-                // --- 1. Navbar Scroll 變色邏輯 ---
-                const navbar = document.getElementById("navbar");
-                function updateNavbar() {
-                    if (window.scrollY > 15) {
-                        navbar.classList.add("nav-bar-scrolling");
-                    } else {
-                        navbar.classList.remove("nav-bar-scrolling");
-                    }
-                }
-                window.addEventListener("scroll", updateNavbar);
-                updateNavbar(); // 初始化執行一次
-
-                // --- 2. Mobile Menu 主開關 (淡入淡出與鎖定背景滾動) ---
-                const menuBtn = document.getElementById("mobile-menu-btn");
-                const closeBtn = document.getElementById(
-                    "mobile-menu-close-btn",
-                );
-                const mobileMenu = document.getElementById("mobile-menu");
-
-                function openMenu() {
-                    // 顯示 Menu (淡入)
-                    mobileMenu.classList.remove(
-                        "opacity-0",
-                        "pointer-events-none",
-                    );
-                    mobileMenu.classList.add(
-                        "opacity-100",
-                        "pointer-events-auto",
-                    );
-                    // 鎖住背後頁面的 Scroll bar
-                    document.body.classList.add("overflow-hidden");
-                }
-
-                function closeMenu() {
-                    // 隱藏 Menu (淡出)
-                    mobileMenu.classList.remove(
-                        "opacity-100",
-                        "pointer-events-auto",
-                    );
-                    mobileMenu.classList.add(
-                        "opacity-0",
-                        "pointer-events-none",
-                    );
-                    // 釋放背後頁面的 Scroll bar
-                    document.body.classList.remove("overflow-hidden");
-                }
-
-                menuBtn.addEventListener("click", openMenu);
-                closeBtn.addEventListener("click", closeMenu);
-
-                // --- 3. Mobile Menu 內 Products 子選單邏輯 ---
-                const productsBtn = document.getElementById(
-                    "mobile-products-btn",
-                );
-                const productsIcon = document.getElementById(
-                    "mobile-products-icon",
-                );
-                const subMenu = productsBtn.nextElementSibling; // 取得下一個兄弟元素 (子選單容器)
-
-                productsBtn.addEventListener("click", function (e) {
-                    e.preventDefault();
-                    // 切換子選單的顯示狀態
-                    subMenu.classList.toggle("hidden");
-                    subMenu.classList.toggle("flex");
-                    // 切換箭頭圖示動畫
-                    productsIcon.classList.toggle("rotate-180");
-                });
-
-                
-            });
-        </script>
+        <script src="./javascript/navbar.js"></script>
 
         <button id="backToTop" class="back-to-top" aria-label="Back to top">
             <span class="icon font-serif">&gt;</span>

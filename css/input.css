@@ -318,7 +318,48 @@
         @apply w-16 h-full text-center bg-transparent focus:outline-none font-bold text-text-base appearance-none border-x-2 border-border-dark;
         -moz-appearance: textfield; /* 隱藏 Firefox 的數字箭頭 */
     }
+
+
+    /* variant */
+    .variant-radio-label {
+        @apply cursor-pointer relative;
+    }
+
+    /* 視覺化的選項方塊。
+       利用 peer-checked 來偵測隱藏的 input 是否被選取，被選取時改變邊框與背景色 */
+    .variant-radio-box {
+        @apply flex items-center justify-center min-w-[3rem] px-4 py-2 border-2 border-border-dark text-text-base font-bold transition-all hover:border-primary peer-checked:border-primary peer-checked:bg-primary peer-checked:text-white;
+    }
+
+    /* 折扣價 (主要凸顯的價格：較大、粗體、主色) */
+    .price-discount {
+        @apply text-2xl font-black text-primary;
+    }
+
+    /* 原價 (次要價格：較小、灰色、刪除線) */
+    .price-original {
+        @apply text-sm font-medium text-gray-400 line-through decoration-gray-400/50;
+    }
+
+    /* 瀏覽人數 (小字、帶圖示的輔助資訊) */
+    .view-count {
+        @apply flex items-center gap-1.5 text-xs font-medium text-gray-500 tracking-wider;
+    }
+
+    /* share */
+    .share-icon-btn {
+        @apply flex items-center justify-center w-12 h-12 border border-outline/20 bg-transparent transition-all duration-300 text-text-base hover:bg-primary/5 hover:-translate-y-1;
+    }
+
+    /* 內部圖示大小控制 */
+    .share-icon-btn img {
+        @apply w-3/4 aspect-square object-contain transition-transform duration-300;
+    }
     
+    /* 讓圖片在 hover 時稍微放大一點，增加互動感 */
+    .share-icon-btn:hover img {
+        @apply scale-110;
+    }
 
     /* carousel */
 
