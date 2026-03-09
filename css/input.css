@@ -927,7 +927,7 @@
 
     /* 按鈕組件 */
     .btn-primary {
-        @apply bg-primary text-on-primary px-6 py-2 rounded-lg 
+        @apply bg-primary text-on-primary px-6 py-2 
            hover:opacity-90 active:scale-95 
            shadow-elevation-1 transition-all ease-(--ease-standard);
     }
@@ -935,13 +935,13 @@
     .btn-solid {
         @apply bg-primary text-white hover:bg-primary/90 hover:shadow transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
         @apply font-medium;
-        @apply py-4 px-8 rounded-lg shadow-sm inline-flex items-center;
+        @apply py-4 px-8 shadow-sm inline-flex items-center;
     }
 
     .btn-outline {
         @apply bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-white hover:shadow transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
         @apply font-medium;
-        @apply py-4 px-8 rounded-lg shadow-sm inline-flex items-center;
+        @apply py-4 px-8 shadow-sm inline-flex items-center;
     }
 
     .btn-reset {
