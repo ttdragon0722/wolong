@@ -482,18 +482,38 @@
                         }
                     </style>
 
-                    <div class="flex flex-col md:flex-row gap-8 items-start mb-20 md:mb-4">
-                        <div class="w-full md:w-1/2">
-                            <figure
-                                class="relative w-full aspect-square bg-gray-100 border border-container rounded overflow-hidden flex items-center justify-center"
+                    <div
+                        class="flex flex-col md:flex-row gap-8 items-start mb-20 md:mb-4"
+                    >
+                        <div class="w-full md:w-1/2 flex flex-col gap-4">
+                            <div
+                                class="w-full aspect-square bg-gray-100 overflow-hidden"
                             >
                                 <img
                                     id="product-img"
-                                    src="./img/product-1.jpg"
-                                    alt="Motorcycle Components Aluminum Parts"
-                                    class="w-full h-full object-cover cursor-zoom-in hover:opacity-90 transition-opacity"
+                                    src="https://placehold.co/600x600/eeeeee/999999?text=Image+1"
+                                    alt="Product Main"
+                                    class="product-main-img"
                                 />
-                            </figure>
+                            </div>
+
+                            <div
+                                class="flex gap-3 overflow-x-auto pb-2"
+                                id="thumbnail-container"
+                            >
+                                <img
+                                    src="https://placehold.co/600x600/eeeeee/999999?text=Image+1"
+                                    class="thumbnail thumbnail-base border-primary"
+                                />
+                                <img
+                                    src="https://placehold.co/600x600/dddddd/666666?text=Image+2"
+                                    class="thumbnail thumbnail-base border-transparent hover:border-primary"
+                                />
+                                <img
+                                    src="https://placehold.co/600x600/cccccc/333333?text=Image+3"
+                                    class="thumbnail thumbnail-base border-transparent hover:border-primary"
+                                />
+                            </div>
                         </div>
 
                         <div class="w-full md:w-1/2 flex flex-col">
@@ -502,15 +522,65 @@
                             >
                                 Motorcycle Components Aluminum Parts
                             </h1>
-                            <hr class="bg-[#B4B4B4] mb-8" />
+                            <hr class="bg-border-dark mb-8" />
                             <div
-                                class="text-gray-700 font-bold tracking-wide mb-8"
+                                class="text-text-base font-bold tracking-wide mb-8"
                             >
-                                MT002
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Neque quibusdam molestiae
+                                sapiente totam, deleniti magnam vero ratione
+                                numquam ducimus, libero harum quae amet illo.
+                                Iusto quo accusamus officia possimus ut.
                             </div>
 
-                            <div>
-                                <button class="btn-outline text-lg font-bold w-full md:w-fit inline-flex items-center justify-center">
+                            <div
+                                class="flex flex-col sm:flex-row items-start sm:items-center gap-4 mt-auto"
+                            >
+                                <div
+                                    class="flex items-center border-2 border-border-dark overflow-hidden h-12"
+                                >
+                                    <button id="qty-minus" class="qty-btn">
+                                        <svg
+                                            class="w-4 h-4"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="2"
+                                                d="M20 12H4"
+                                            ></path>
+                                        </svg>
+                                    </button>
+                                    <input
+                                        id="qty-input"
+                                        type="number"
+                                        value="1"
+                                        min="1"
+                                        class="qty-input"
+                                    />
+                                    <button id="qty-plus" class="qty-btn">
+                                        <svg
+                                            class="w-4 h-4"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="2"
+                                                d="M12 4v16m8-8H4"
+                                            ></path>
+                                        </svg>
+                                    </button>
+                                </div>
+
+                                <button
+                                    class="btn-outline text-lg font-bold w-full sm:w-fit h-12 px-6 inline-flex items-center justify-center"
+                                >
                                     <svg
                                         class="w-5 h-5 mr-2"
                                         fill="none"
@@ -533,87 +603,7 @@
 
                     <div id="lightbox-bg" class="lightbox-bg"></div>
 
-                    <script>
-                        const productImg =
-                            document.getElementById("product-img");
-                        const lightboxBg =
-                            document.getElementById("lightbox-bg");
-                        let isLightboxOpen = false;
-                        let cloneImg = null;
-
-                        productImg.addEventListener("click", () => {
-                            if (isLightboxOpen) return;
-                            isLightboxOpen = true;
-
-                            // 【新增】鎖定背景滾動
-                            document.body.style.overflow = "hidden";
-
-                            const rect = productImg.getBoundingClientRect();
-                            cloneImg = productImg.cloneNode();
-
-                            cloneImg.style.position = "fixed";
-                            cloneImg.style.top = rect.top + "px";
-                            cloneImg.style.left = rect.left + "px";
-                            cloneImg.style.width = rect.width + "px";
-                            cloneImg.style.height = rect.height + "px";
-                            cloneImg.style.zIndex = "51";
-                            cloneImg.style.borderRadius = "0.5rem";
-                            cloneImg.style.objectFit = "contain";
-                            cloneImg.style.cursor = "zoom-out";
-                            cloneImg.style.transition =
-                                "all 0.5s cubic-bezier(0.25, 1, 0.5, 1)";
-                            cloneImg.classList.remove("hover:opacity-90"); // 移除 hover 效果
-
-                            document.body.appendChild(cloneImg);
-                            productImg.style.opacity = "0";
-                            lightboxBg.classList.add("active");
-
-                            // 強制重繪以觸發 transition
-                            cloneImg.offsetWidth;
-
-                            // 動畫終點：畫面正中央
-                            cloneImg.style.top = "50%";
-                            cloneImg.style.left = "50%";
-                            cloneImg.style.transform = "translate(-50%, -50%)";
-                            cloneImg.style.width = "85vw";
-                            cloneImg.style.height = "85vh";
-
-                            // 關閉邏輯
-                            const closeLightbox = () => {
-                                // 【新增】解除背景滾動鎖定
-                                document.body.style.overflow = "";
-
-                                const newRect =
-                                    productImg.getBoundingClientRect();
-                                lightboxBg.classList.remove("active");
-
-                                cloneImg.style.transform = "translate(0, 0)";
-                                cloneImg.style.top = newRect.top + "px";
-                                cloneImg.style.left = newRect.left + "px";
-                                cloneImg.style.width = newRect.width + "px";
-                                cloneImg.style.height = newRect.height + "px";
-
-                                setTimeout(() => {
-                                    if (cloneImg && cloneImg.parentNode) {
-                                        cloneImg.parentNode.removeChild(
-                                            cloneImg,
-                                        );
-                                    }
-                                    productImg.style.opacity = "1";
-                                    isLightboxOpen = false;
-                                }, 500);
-                            };
-
-                            lightboxBg.addEventListener(
-                                "click",
-                                closeLightbox,
-                                { once: true },
-                            );
-                            cloneImg.addEventListener("click", closeLightbox, {
-                                once: true,
-                            });
-                        });
-                    </script>
+                    <script src="./javascript/product-item.js"></script>
 
                     <div class="mb-12">
                         <h3 class="page-title-h3 text-center">
@@ -715,13 +705,14 @@
                             BACK
                         </button>
                     </div>
-
+                </div>
+            </div>
         </section>
 
         <footer
-            class="py-12 border-t bg-[url(../img/footer-bg.jpg)] bg-center border-outline/20 text-on-primary"
+            class="border-t bg-[url(../img/footer-bg.jpg)] bg-center border-outline/20 text-on-primary"
         >
-            <div class="custom-container">
+            <div class="custom-container py-12">
                 <div class="flex flex-col gap-12 lg:flex-row">
                     <div class="w-full space-y-4 lg:w-1/3">
                         <h2 class="text-3xl font-bold">YCT Precision</h2>
