@@ -660,7 +660,7 @@
 
     /* 標題區塊 */
     .qa-header {
-        @apply bg-text-strong text-white px-6 py-4 flex items-center justify-between;
+        @apply bg-navbar-mobile-bg text-on-primary px-6 py-4 flex items-center justify-between;
     }
 
     .qa-title {
