@@ -1,7 +1,7 @@
 TODO 
-BACK BUTTON 
+✅BACK BUTTON 
 
-gallery 
+✅gallery 
 
 form page * n
 

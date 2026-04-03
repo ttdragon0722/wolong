@@ -28,24 +28,22 @@
     --color-navbar-mobile-bg: rgba(0, 0, 0, 0.95);
 
     /* --- 邊框顏色 (Borders) --- */
-    --color-border-light: #f3f4f6; /* 替換原本的 gray-100 / zinc-100 */
-    --color-border-base: #e5e7eb; /* 替換原本的 gray-200 / zinc-200 */
-    --color-border-dark: #d1d5db; /* 替換原本的 gray-300 / zinc-300 */
-    --color-border-strong: #c6c6c6; /* 替換原本的 #C6C6C6 */
+    --color-border-subtle: #e5e7eb; /* 分隔線、card、面板 */
+    --color-border-base: #d1d5db; /* 表單輸入框、variant 選項 */
+    --color-border-strong: #c6c6c6; /* sidebar、accordion、pagination */
 
     /* 灰階背景 (Backgrounds) */
-    --color-bg-lightest: #f9fafb; /* 替換原本的 gray-50 / zinc-50 */
-    --color-bg-light: #f3f4f6; /* 替換原本的 gray-100 */
-    --color-bg-muted: #dedede; /* 替換原本的 #DEDEDE */
+    --color-bg-lightest: #f9fafb; /* gray-50 */
+    --color-bg-light: #f3f4f6; /* gray-100 */
+    --color-bg-medium: #e5e7eb; /* gray-200 */
+    --color-bg-muted: #dedede; /* 深灰背景（sidebar 等） */
 
     /* 灰階文字 (Text) */
-    --color-text-strong: #0f172a; /* 替換原本的 slate-900 / gray-900 / zinc-900 */
-    --color-text-dark: #1f2937; /* 替換原本的 slate-800 / gray-800 / zinc-800 */
-    --color-text-base: #374151; /* 替換原本的 slate-700 / gray-700 */
-    --color-text-muted: #4b5563; /* 替換原本的 gray-600 */
-    --color-text-subtle: #6b7280; /* 替換原本的 gray-500 */
-    --color-text-light: #9ca3af; /* 替換原本的 slate-400 / gray-400 */
-    --color-text-placeholder: #d1d5db; /* 替換原本的 gray-300 */
+    --color-text-strong: #0f172a; /* 標題、標籤 */
+    --color-text-base: #374151; /* 一般 UI 文字 */
+    --color-text-muted: #6b7280; /* 次要文字 */
+    --color-text-light: #9ca3af; /* 輔助、禁用、日期 */
+    --color-text-placeholder: #d1d5db; /* 表單 placeholder */
 
     /* 狀態顏色 (Status) */
     --color-error: #ef4444; /* 替換原本的 red-500 */
@@ -147,7 +145,7 @@
         @apply fixed bottom-8 right-8 w-16 h-16 z-9999;
 
         /* 視覺：灰色、透明、彈性佈局 */
-        @apply bg-text-dark/80 backdrop-blur-sm border border-white/20;
+        @apply bg-text-strong/80 backdrop-blur-sm border border-white/20;
         @apply flex flex-col items-center justify-center cursor-pointer transition-all duration-300;
 
         /* 隱藏狀態 (預設) */
@@ -260,7 +258,7 @@
     /* aux */
     /* 輔助選單的一般按鈕與文字 */
     .page-aux-item {
-        @apply flex items-center gap-1.5 font-bold text-text-dark hover:text-text-strong transition-colors focus:outline-none cursor-pointer;
+        @apply flex items-center gap-1.5 font-bold text-text-strong hover:text-text-strong transition-colors focus:outline-none cursor-pointer;
     }
 
     /* 網頁內輔助選單：下拉容器 (加入 pt-3 緩衝區防止移出消失) */
@@ -275,7 +273,7 @@
 
     /* 網頁內輔助選單：下拉連結項目 */
     .page-aux-dropdown-link {
-        @apply block px-4 py-2 text-sm font-medium text-text-dark hover:bg-gray-50 hover:text-text-strong transition-colors;
+        @apply block px-4 py-2 text-sm font-medium text-text-strong hover:bg-bg-lightest hover:text-text-strong transition-colors;
     }
 
     /* 數量提示標籤 (紅底白字) */
@@ -306,12 +304,12 @@
 
     /* 數量增減按鈕 (+ / -) */
     .qty-btn {
-        @apply w-12 h-full flex items-center justify-center text-text-base hover:bg-gray-100 transition-colors focus:outline-none;
+        @apply w-12 h-full flex items-center justify-center text-text-base hover:bg-bg-light transition-colors focus:outline-none;
     }
 
     /* 數量輸入框 */
     .qty-input {
-        @apply w-16 h-full text-center bg-transparent focus:outline-none font-bold text-text-base appearance-none border-x-2 border-border-dark;
+        @apply w-16 h-full text-center bg-transparent focus:outline-none font-bold text-text-base appearance-none border-x-2 border-border-base;
         -moz-appearance: textfield; /* 隱藏 Firefox 的數字箭頭 */
     }
 
@@ -323,7 +321,7 @@
     /* 視覺化的選項方塊。
        利用 peer-checked 來偵測隱藏的 input 是否被選取，被選取時改變邊框與背景色 */
     .variant-radio-box {
-        @apply flex items-center justify-center min-w-[3rem] px-4 py-2 border-2 border-border-dark text-text-base font-bold transition-all hover:border-primary peer-checked:border-primary peer-checked:bg-primary peer-checked:text-white;
+        @apply flex items-center justify-center min-w-[3rem] px-4 py-2 border-2 border-border-base text-text-base font-bold transition-all hover:border-primary peer-checked:border-primary peer-checked:bg-primary peer-checked:text-white;
     }
 
     /* 折扣價 (主要凸顯的價格：較大、粗體、主色) */
@@ -333,12 +331,12 @@
 
     /* 原價 (次要價格：較小、灰色、刪除線) */
     .price-original {
-        @apply text-sm font-medium text-gray-400 line-through decoration-gray-400/50;
+        @apply text-sm font-medium text-text-light line-through decoration-text-light/50;
     }
 
     /* 瀏覽人數 (小字、帶圖示的輔助資訊) */
     .view-count {
-        @apply flex items-center gap-1.5 text-xs font-medium text-gray-500 tracking-wider;
+        @apply flex items-center gap-1.5 text-xs font-medium text-text-muted tracking-wider;
     }
 
     /* share */
@@ -471,7 +469,7 @@
         /* 卡片內的實體內容外框 */
         .card-inner {
             /* 手機版縮減 p-3，電腦版恢復 md:p-4 */
-            @apply bg-white p-3 md:p-4 border border-border-base transition-colors duration-300 group-hover:bg-bg-light h-full;
+            @apply bg-white p-3 md:p-4 border border-border-subtle transition-colors duration-300 group-hover:bg-bg-light h-full;
         }
 
         /* 圖片外層與圖片本身 */
@@ -485,12 +483,12 @@
 
         /* 裝飾線：縮小預設寬度 */
         .card-line {
-            @apply h-0.5 w-6 bg-border-dark mt-2 mb-3 md:mb-4 transition-all duration-500 group-hover:w-full group-hover:bg-primary;
+            @apply h-0.5 w-6 bg-border-base mt-2 mb-3 md:mb-4 transition-all duration-500 group-hover:w-full group-hover:bg-primary;
         }
 
         /* 標題文字：手機版縮小字體 (text-base) 避免換行過於頻繁 */
         .card-title {
-            @apply text-base md:text-lg font-bold text-text-dark transition-colors duration-300 group-hover:text-primary leading-snug;
+            @apply text-base md:text-lg font-bold text-text-strong transition-colors duration-300 group-hover:text-primary leading-snug;
         }
 
         /* 內文描述 */
@@ -500,7 +498,7 @@
 
         /* 價格標籤：縮小定位距離 */
         .card-price {
-            @apply absolute bottom-4 right-4 md:bottom-6 md:right-8 text-xs md:text-sm font-medium text-text-subtle;
+            @apply absolute bottom-4 right-4 md:bottom-6 md:right-8 text-xs md:text-sm font-medium text-text-muted;
         }
     }
 
@@ -520,7 +518,7 @@
 
         /* 縮圖包裝層：強制 16:9 */
         .movie-image-wrapper {
-            @apply aspect-video w-full overflow-hidden rounded-lg mb-3 bg-text-dark;
+            @apply aspect-video w-full overflow-hidden rounded-lg mb-3 bg-text-strong;
 
             /* 圖片本身 */
             .movie-image {
@@ -582,26 +580,26 @@
     }
 
     .quote-card {
-        @apply relative p-8 bg-white border border-border-light shadow-lg rounded-2xl my-10 overflow-hidden;
+        @apply relative p-8 bg-white border border-border-subtle shadow-lg rounded-2xl my-10 overflow-hidden;
     }
 
     /* payment */
     /* 主容器 */
     .pay-set-line {
-        @apply border border-border-base overflow-hidden bg-white shadow-sm mb-8;
+        @apply border border-border-subtle overflow-hidden bg-white shadow-sm mb-8;
 
         /* 標題區 */
         .panel-heading {
-            @apply bg-bg-lightest border-b border-border-base px-5 py-3;
+            @apply bg-bg-lightest border-b border-border-subtle px-5 py-3;
         }
 
         .panel-title {
-            @apply text-lg font-bold text-text-dark flex items-center gap-2;
+            @apply text-lg font-bold text-text-strong flex items-center gap-2;
         }
 
         /* 付費選項列 (原本的 content03) */
         .content03 {
-            @apply p-4 border-b border-border-light last:border-b-0 transition-colors duration-200 flex flex-col gap-3;
+            @apply p-4 border-b border-border-subtle last:border-b-0 transition-colors duration-200 flex flex-col gap-3;
 
             /* 選項被選中時的背景加深 (需配合 JS 或 CSS :has) */
             &:has(input:checked) {
@@ -615,13 +613,13 @@
 
             /* 隱藏預設 radio 並自定義或美化 */
             input[type="radio"] {
-                @apply w-5 h-5 text-primary border-border-dark focus:ring-primary focus:ring-offset-2;
+                @apply w-5 h-5 text-primary border-border-base focus:ring-primary focus:ring-offset-2;
             }
         }
 
         /* 下拉選單樣式 */
         select {
-            @apply w-full sm:w-auto min-w-[300px] px-3 py-2 bg-white border border-border-dark rounded-lg text-sm
+            @apply w-full sm:w-auto min-w-[300px] px-3 py-2 bg-white border border-border-base rounded-lg text-sm
                focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none
                disabled:bg-bg-lightest disabled:text-text-light disabled:cursor-not-allowed;
         }
@@ -635,7 +633,7 @@
 
         /* 底部說明區 (Footer) */
         .panel-footer {
-            @apply bg-bg-lightest p-5 border-t border-border-base text-sm leading-relaxed;
+            @apply bg-bg-lightest p-5 border-t border-border-subtle text-sm leading-relaxed;
         }
 
         /* 注意事項區 */
@@ -654,7 +652,7 @@
     /* Q AND A */
     /* Q&A 主容器 */
     .qa-panel {
-        @apply border border-border-base bg-white mb-8 overflow-hidden rounded-none shadow-sm;
+        @apply border border-border-subtle bg-white mb-8 overflow-hidden rounded-none shadow-sm;
     }
 
     /* 標題區塊 */
@@ -677,7 +675,7 @@
     }
 
     .qa-user-meta {
-        @apply flex justify-between items-center border-b border-border-light pb-2;
+        @apply flex justify-between items-center border-b border-border-subtle pb-2;
     }
 
     .qa-user-name {
@@ -689,7 +687,7 @@
     }
 
     .qa-question {
-        @apply text-text-base leading-relaxed pl-2 border-l-2 border-border-base;
+        @apply text-text-base leading-relaxed pl-2 border-l-2 border-border-subtle;
     }
 
     /* 站長回覆區塊 (加強對比) */
@@ -702,7 +700,7 @@
     }
 
     .qa-admin-content {
-        @apply text-text-dark font-medium;
+        @apply text-text-strong font-medium;
     }
 
     /* text font */
@@ -753,7 +751,7 @@
 
     /* 表格的外層容器：處理 RWD 圓角與陰影 */
     .table-responsive {
-        @apply w-full overflow-x-auto border border-border-base shadow-sm mb-6 bg-white;
+        @apply w-full overflow-x-auto border border-border-subtle shadow-sm mb-6 bg-white;
     }
 
     /* 表格本體通用樣式 */
@@ -768,7 +766,7 @@
 
     /* 表格資料列 (td) */
     .spec-table td {
-        @apply px-4 py-3 border-b border-border-base transition-colors duration-150;
+        @apply px-4 py-3 border-b border-border-subtle transition-colors duration-150;
     }
 
     /* 表格斑馬紋 (對應原本的 discolor) 與 Hover 效果 */
@@ -852,7 +850,7 @@
     .form-submit {
         @apply w-full md:w-auto px-12 py-4 bg-black text-white font-bold 
            tracking-[0.2em] uppercase transition-all duration-300
-           hover:bg-text-dark hover:shadow-lg active:scale-95;
+           hover:bg-text-strong hover:shadow-lg active:scale-95;
     }
 
     /* Checkbox 樣式優化 */
@@ -863,7 +861,7 @@
 
     /* 結帳新增 */
     .form-section {
-        @apply p-6 bg-container border border-border-base mb-6;
+        @apply p-6 bg-container border border-border-subtle mb-6;
     }
 
     /* 區塊大標題 (帶工業感的底線) */
@@ -944,25 +942,22 @@
     }
 
     .btn-reset {
-        @apply w-full md:w-auto px-12 py-4 bg-gray-100 text-gray-500 font-bold uppercase tracking-widest hover:bg-gray-200 hover:text-gray-800 transition-all;
+        @apply w-full md:w-auto px-12 py-4 bg-bg-light text-text-muted font-bold uppercase tracking-widest hover:bg-bg-medium hover:text-text-strong transition-all;
     }
 
     .btn-submit {
-        @apply w-full md:w-auto px-12 py-4 bg-black text-white font-bold uppercase tracking-widest hover:bg-gray-800 transition-all;
+        @apply w-full md:w-auto px-12 py-4 bg-black text-white font-bold uppercase tracking-widest hover:bg-text-strong transition-all;
     }
 
     .back-btn {
-        @apply bg-black text-white hover:bg-text-dark hover:shadow-md transition-all duration-200;
+        @apply bg-black text-white hover:bg-text-strong hover:shadow-md transition-all duration-200;
         @apply focus:outline-none focus:ring-2 focus:ring-text-strong focus:ring-offset-2;
         @apply font-semibold tracking-wider text-sm sm:text-base;
         @apply py-4 px-16 shadow-sm inline-flex items-center justify-center gap-2;
     }
 
     .back-link {
-        @apply text-text-muted hover:text-text-strong transition-all duration-200;
-        @apply focus:outline-none focus:ring-2 focus:ring-text-strong focus:ring-offset-2;
-        @apply font-semibold tracking-wider text-sm sm:text-base;
-        @apply py-4 px-16 shadow-sm inline-flex items-center justify-center gap-2;
+        @apply inline-flex items-center gap-1.5 text-sm text-text-muted hover:text-primary transition-colors duration-(--duration-standard) ease-(--ease-standard) focus:outline-none;
     }
 
     .form-control {
@@ -1008,6 +1003,66 @@
         @apply inline-flex items-center justify-center px-6 py-2 rounded-lg font-medium
            bg-primary text-on-primary transition-all duration-(--duration-standard)
            hover:opacity-90 active:scale-95 shadow-elevation-1 cursor-pointer;
+    }
+
+    /* location */
+    .location-tabs {
+        @apply flex flex-wrap mb-8 border border-border-base;
+    }
+
+    .location-tab {
+        @apply px-5 py-2.5 text-sm font-bold text-text-muted bg-white
+               transition-colors cursor-pointer whitespace-nowrap border-r border-border-base last:border-r-0;
+
+        &:hover {
+            @apply bg-bg-light text-text-strong;
+        }
+
+        &.is-active {
+            @apply bg-primary text-on-primary border-primary;
+        }
+    }
+
+    .location-card {
+        @apply py-6 border-b border-border-subtle last:border-b-0;
+
+        &.is-hidden {
+            @apply hidden;
+        }
+    }
+
+    .location-card-notice {
+        @apply text-xs text-primary bg-primary/5 border-l-2 border-primary px-3 py-2 mb-4;
+    }
+
+    .location-card-name {
+        @apply text-xl font-bold text-text-strong mb-3;
+    }
+
+    .location-card-body {
+        @apply flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4;
+    }
+
+    .location-card-info {
+        @apply flex flex-col gap-2;
+    }
+
+    .location-card-row {
+        @apply flex items-start gap-2 text-sm text-text-base;
+    }
+
+    .location-card-icon {
+        @apply w-4 h-4 shrink-0 mt-0.5 text-primary;
+    }
+
+    .location-card-actions {
+        @apply flex flex-row sm:flex-col gap-2 shrink-0;
+    }
+
+    .location-action-btn {
+        @apply inline-flex items-center gap-1.5 text-xs font-bold text-text-muted
+               border border-border-base px-3 py-2
+               hover:border-primary hover:text-primary transition-colors whitespace-nowrap;
     }
 
     /* --- 手機版導航連結 (整理重複樣式) --- */
