@@ -222,7 +222,7 @@
     }
 
     .dropdown-container {
-        @apply hidden absolute overflow-y-scroll top-full left-1/2 -translate-x-1/2 w-56 border-t-4 border-primary bg-white border rounded shadow-lg py-2;
+        @apply hidden absolute top-full left-1/2 -translate-x-1/2 w-56 border-t-4 border-primary bg-white border rounded shadow-lg py-2;
 
         /* 下拉選單頂部透明緩衝區 (防止游標移出時選單立刻消失) */
         .dropdown-banner {

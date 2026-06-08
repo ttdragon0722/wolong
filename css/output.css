@@ -10,6 +10,7 @@
     --color-red-100: oklch(93.6% 0.032 17.717);
     --color-red-500: oklch(63.7% 0.237 25.331);
     --color-red-600: oklch(57.7% 0.245 27.325);
+    --color-amber-300: oklch(87.9% 0.169 91.605);
     --color-green-600: oklch(62.7% 0.194 149.214);
     --color-blue-100: oklch(93.2% 0.032 255.585);
     --color-blue-700: oklch(48.8% 0.243 264.376);
@@ -305,6 +306,9 @@
   }
   .inset-0 {
     inset: calc(var(--spacing) * 0);
+  }
+  .inset-2 {
+    inset: calc(var(--spacing) * 2);
   }
   .-top-2 {
     top: calc(var(--spacing) * -2);
@@ -617,6 +621,9 @@
   }
   .h-full {
     height: 100%;
+  }
+  .h-px {
+    height: 1px;
   }
   .min-h-\[120px\] {
     min-height: 120px;
@@ -1023,6 +1030,10 @@
     border-style: var(--tw-border-style);
     border-width: 2px;
   }
+  .border-4 {
+    border-style: var(--tw-border-style);
+    border-width: 4px;
+  }
   .border-y {
     border-block-style: var(--tw-border-style);
     border-block-width: 1px;
@@ -1204,6 +1215,21 @@
   }
   .bg-navbar-mobile-bg {
     background-color: var(--color-navbar-mobile-bg);
+  }
+  .bg-on-surface {
+    background-color: var(--color-on-surface);
+  }
+  .bg-on-surface\/20 {
+    background-color: color-mix(in srgb, #f1f5f9 20%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-on-surface) 20%, transparent);
+    }
+  }
+  .bg-on-surface\/30 {
+    background-color: color-mix(in srgb, #f1f5f9 30%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-on-surface) 30%, transparent);
+    }
   }
   .bg-primary {
     background-color: var(--color-primary);
@@ -2190,6 +2216,16 @@
       height: 48vh;
     }
   }
+  .sm\:w-32 {
+    @media (width >= 40rem) {
+      width: calc(var(--spacing) * 32);
+    }
+  }
+  .sm\:w-40 {
+    @media (width >= 40rem) {
+      width: calc(var(--spacing) * 40);
+    }
+  }
   .sm\:w-fit {
     @media (width >= 40rem) {
       width: fit-content;
@@ -2746,7 +2782,6 @@
     width: calc(var(--spacing) * 56);
     --tw-translate-x: calc(calc(1 / 2 * 100%) * -1);
     translate: var(--tw-translate-x) var(--tw-translate-y);
-    overflow-y: scroll;
     border-radius: 0.25rem;
     border-style: var(--tw-border-style);
     border-width: 1px;
