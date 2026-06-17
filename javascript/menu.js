@@ -58,9 +58,9 @@ function renderDesktop(items, depth = 0) {
                     return `<a href="${item.href}" class="nav-item">${item.label}</a>`;
                 }
                 return `
-<div class="group dropdown-btn">
-    <button class="nav-item dropdown-text">${item.label}${chevron("dropdown-icon group-hover:rotate-180")}</button>
-    <div class="dropdown-container group-hover:block">
+<div class="dropdown-btn">
+    <button class="nav-item dropdown-text desktop-dropdown-trigger">${item.label}${chevron("dropdown-icon")}</button>
+    <div class="dropdown-container">
         <div class="dropdown-banner"></div>
         ${renderDesktop(item.children, 1)}
     </div>
@@ -69,9 +69,9 @@ function renderDesktop(items, depth = 0) {
 
             if (depth === 1 && hasChildren(item)) {
                 return `
-<div class="group/sub relative desktop-sub-trigger">
-    <button class="dropdown-item w-full flex items-center justify-between">${item.label}${chevron("w-4 h-4 -rotate-90 text-gray-400")}</button>
-    <div class="dropdown-sub-container group-hover/sub:block">
+<div class="relative desktop-sub-trigger">
+    <button class="dropdown-item w-full flex items-center justify-between desktop-sub-toggle">${item.label}${chevron("w-4 h-4 -rotate-90 text-gray-400 transition-transform")}</button>
+    <div class="dropdown-sub-container">
         <div class="dropdown-sub-banner"></div>
         ${renderDesktop(item.children, 2)}
     </div>
