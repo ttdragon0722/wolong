@@ -126,6 +126,43 @@
             class="py-20 theme-light bg-[url(../img/index-bg.jpg)] bg-cover bg-center bg-no-repeat"
         >
             <div class="custom-container text-on-surface">
+                <h3 class="page-title-h3 text-center">6/18改動頁面</h3>
+                <div
+                    class="relative flex items-center justify-center py-4 w-3/5 mx-auto mb-4"
+                >
+                    <hr class="w-full border-primary" />
+
+                    <div class="absolute bg-surface px-3">
+                        <div
+                            class="w-0 h-0 border-l-8 border-l-transparent border-r-8 border-r-transparent border-t-[12px] border-t-primary"
+                        ></div>
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-10 p-6 max-w-4xl mx-auto">
+                    <a href="./product-item.html" target="_blank">
+                        <button class="btn-solid">
+                            資料驅動產品分類選單 product-item
+                        </button>
+                    </a>
+                    <a href="./docs/product-item.md" target="_blank">
+                        <button class="btn-solid">產品選單文檔</button>
+                    </a>
+                </div>
+                <div
+                    class="relative flex items-center justify-center py-4 w-3/5 mx-auto mb-4"
+                >
+                    <blockquote class="quote-card w-full">
+                        產品內頁（product-item）的分類選單改為「資料驅動」：新增
+                        <strong>product-menu.js</strong>，以單一
+                        <strong>productCategories</strong>
+                        巢狀資料同時產生「桌面側欄」與「手機折疊選單」，內容只需維護一處。新增第二層子分類
+                        <strong>toggle</strong>，點擊可展開／收合並帶有高度過渡動畫。桌面子選單以專用色彩 token
+                        <strong>--color-sidebar-sub</strong>
+                        與父層做出層級區別，配色集中於
+                        <strong>css/input.css</strong> 的 @theme 管理。
+                    </blockquote>
+                </div>
+
                 <h3 class="page-title-h3 text-center">6/8改動頁面</h3>
                 <div
                     class="relative flex items-center justify-center py-4 w-3/5 mx-auto mb-4"

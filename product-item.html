@@ -325,145 +325,18 @@
             </div>
         </div>
 
-        <div class="accordion-container min-[1000px]:hidden">
-            <input type="checkbox" id="accordion-trigger" class="hidden" />
-            <label for="accordion-trigger" class="accordion-head">
-                <span>Product Categories</span>
-                <svg
-                    class="arrow-icon w-4 h-4 transition-transform duration-300"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                >
-                    <path
-                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                    />
-                </svg>
-            </label>
-
-            <div class="accordion-body">
-                <a
-                    href="product_CNC_Machining_Parts.php"
-                    class="accordion-link group"
-                >
-                    <span>CNC Machining Parts</span>
-                    <svg
-                        class="w-2 h-2 text-black"
-                        viewBox="0 0 10 16"
-                        fill="currentColor"
-                    >
-                        <path d="M10 8L0 16V0L10 8Z" />
-                    </svg>
-                </a>
-
-                <a
-                    href="product_Aluminum_parts.php"
-                    class="accordion-link group"
-                >
-                    <span>Aluminum parts</span>
-                    <svg
-                        class="w-2 h-2 text-black"
-                        viewBox="0 0 10 16"
-                        fill="currentColor"
-                    >
-                        <path d="M10 8L0 16V0L10 8Z" />
-                    </svg>
-                </a>
-
-                <a
-                    href="product_Automotive_Motorcycle.php"
-                    class="accordion-link group"
-                >
-                    <span>Automotive │ Motorcycle</span>
-                    <svg
-                        class="w-2 h-2 text-black"
-                        viewBox="0 0 10 16"
-                        fill="currentColor"
-                    >
-                        <path d="M10 8L0 16V0L10 8Z" />
-                    </svg>
-                </a>
-
-                <a
-                    href="product_Special_Bolts_and_Screws.php"
-                    class="accordion-link group"
-                >
-                    <span>Special Bolts and Screws</span>
-                    <svg
-                        class="w-2 h-2 text-black"
-                        viewBox="0 0 10 16"
-                        fill="currentColor"
-                    >
-                        <path d="M10 8L0 16V0L10 8Z" />
-                    </svg>
-                </a>
-            </div>
-        </div>
+        <!-- 手機分類選單：內容由 javascript/product-menu.js 依 productCategories 渲染 -->
+        <div
+            id="product-accordion"
+            class="accordion-container min-[1000px]:hidden"
+        ></div>
         <section class="py-12 theme-light bg-surface text-on-surface">
             <div class="custom-container flex gap-12 max-[1000px]:flex-col">
-                <div class="w-68 max-[1000px]:hidden">
-                    <h1 class="sidebar-title mb-8">PRODUCTS</h1>
-                    <div class="sidebar-container">
-                        <a href="#" class="sidebar-item group">
-                            <span>CNC Machining Parts</span>
-                            <svg
-                                class="icon-svg w-3 h-3"
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 10 16"
-                                fill="currentColor"
-                            >
-                                <path d="M10 8L0 16V0L10 8Z" />
-                            </svg>
-                        </a>
-
-                        <a href="#" class="sidebar-item group">
-                            <span>Aluminum Parts</span>
-                            <svg
-                                class="icon-svg w-3 h-3"
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 10 16"
-                                fill="currentColor"
-                            >
-                                <path d="M10 8L0 16V0L10 8Z" />
-                            </svg>
-                        </a>
-
-                        <a href="#" class="sidebar-item group">
-                            <span>Automotive</span>
-                            <svg
-                                class="icon-svg w-3 h-3"
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 10 16"
-                                fill="currentColor"
-                            >
-                                <path d="M10 8L0 16V0L10 8Z" />
-                            </svg>
-                        </a>
-
-                        <a href="#" class="sidebar-item group">
-                            <span>Bicycle Parts</span>
-                            <svg
-                                class="icon-svg w-3 h-3"
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 10 16"
-                                fill="currentColor"
-                            >
-                                <path d="M10 8L0 16V0L10 8Z" />
-                            </svg>
-                        </a>
-
-                        <a href="#" class="sidebar-item group">
-                            <span>Lighting Parts</span>
-                            <svg
-                                class="icon-svg w-3 h-3"
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 10 16"
-                                fill="currentColor"
-                            >
-                                <path d="M10 8L0 16V0L10 8Z" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
+                <!-- 桌面分類側欄：內容由 javascript/product-menu.js 依 productCategories 渲染 -->
+                <div
+                    id="product-sidebar"
+                    class="w-68 max-[1000px]:hidden"
+                ></div>
 
                 <div class="flex-1">
                     <div class="mb-6">
@@ -1148,5 +1021,6 @@
                 </div>
             </div>
         </footer>
+        <script src="./javascript/product-menu.js"></script>
     </body>
 </html>

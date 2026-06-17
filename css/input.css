@@ -37,6 +37,7 @@
     --color-bg-light: #f3f4f6; /* gray-100 */
     --color-bg-medium: #e5e7eb; /* gray-200 */
     --color-bg-muted: #dedede; /* 深灰背景（sidebar 等） */
+    --color-sidebar-sub: #d6d6d6; /* sidebar 第二層子項背景（比父層 muted 稍深，凸顯層級） */
 
     /* 灰階文字 (Text) */
     --color-text-strong: #0f172a; /* 標題、標籤 */
@@ -449,13 +450,46 @@
                     @apply max-h-250; /* 若 Tailwind config 沒設定 250，可改用任意值寫法如 max-h-[1000px] */
                 }
 
-                /* 箭頭旋轉動畫 */
+                /* 箭頭旋轉動畫（三角形：指右 → 旋轉 90 度指下） */
                 ~ .accordion-head .arrow-icon {
-                    @apply rotate-180;
+                    @apply rotate-90;
                 }
             }
         }
     }
+    /* 產品分類選單第二層 toggle（sidebar 與 accordion 共用） */
+    .submenu-toggle {
+        @apply cursor-pointer;
+    }
+
+    /* 第二層展開容器：以 max-height 做高度動畫，預設收合 */
+    .submenu-panel {
+        @apply overflow-hidden;
+        max-height: 0;
+        transition: max-height 0.3s ease;
+    }
+
+    /* toggle 箭頭過渡（展開時由 JS 加上 rotate-180） */
+    .toggle-chevron {
+        @apply transition-transform duration-300;
+    }
+
+    /* 桌面 sidebar 第二層子項：與父層 .sidebar-item 設計一致，
+       僅以「縮排 + 專用背景色 bg-sidebar-sub + 字號略小」做出一點點層級區別 */
+    .sidebar-sub-item {
+        @apply flex items-center px-8 py-4 text-sm bg-sidebar-sub
+           border-b-2 border-border-strong transition-all duration-200
+           hover:bg-black hover:text-white hover:border-transparent
+           last:border-b-0;
+    }
+
+    /* 手機 accordion 第二層子項 */
+    .accordion-sub-item {
+        @apply flex items-center px-8 py-4 text-sm bg-gray-50 text-black
+           border-b border-border-strong transition-all duration-200
+           hover:text-primary last:border-b-0;
+    }
+
     /* card */
     .card-container {
         @apply flex flex-wrap -mx-2 md:-mx-4;
