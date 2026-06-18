@@ -55,76 +55,26 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // --- 4. Desktop Menu 多層級下拉選單 (點擊 toggle 開關) ---
+    // --- 4. Desktop Menu 多層級下拉選單 (hover 顯示) ---
+    // 第一層、第二層的展開改由 CSS :hover 處理（見 input.css）。
+    // JS 僅在滑入第二層觸發項時，量測第三層下拉是否超出視窗右緣，
+    // 必要時套用 .open-left 改為向左展開。
     const desktopNav = document.getElementById("desktop-nav");
 
     if (desktopNav) {
-        // 關閉所有桌面下拉（第二層 + 第三層），並還原箭頭方向
-        function closeAllDesktopDropdowns() {
-            desktopNav
-                .querySelectorAll(".dropdown-container, .dropdown-sub-container")
-                .forEach((panel) => panel.classList.remove("block"));
-            desktopNav
-                .querySelectorAll(".desktop-dropdown-trigger .dropdown-icon")
-                .forEach((icon) => icon.classList.remove("rotate-180"));
-        }
+        desktopNav.querySelectorAll(".desktop-sub-trigger").forEach((trigger) => {
+            const subContainer = trigger.querySelector(".dropdown-sub-container");
+            if (!subContainer) return;
 
-        // 第一層：點擊頂層按鈕開關第二層（同層互斥）
-        desktopNav.querySelectorAll(".desktop-dropdown-trigger").forEach((btn) => {
-            btn.addEventListener("click", function (e) {
-                e.preventDefault();
-                e.stopPropagation();
+            trigger.addEventListener("mouseenter", function () {
+                // 先還原預設向右狀態，hover 已使其顯示，可正確量測是否超界
+                subContainer.classList.remove("open-left");
 
-                const container = this.nextElementSibling; // .dropdown-container
-                const icon = this.querySelector(".dropdown-icon");
-                const willOpen = !container.classList.contains("block");
-
-                closeAllDesktopDropdowns();
-
-                if (willOpen) {
-                    container.classList.add("block");
-                    if (icon) icon.classList.add("rotate-180");
+                const rect = subContainer.getBoundingClientRect();
+                if (rect.right > window.innerWidth) {
+                    subContainer.classList.add("open-left");
                 }
             });
-        });
-
-        // 第二層：點擊子觸發按鈕開關第三層
-        desktopNav.querySelectorAll(".desktop-sub-toggle").forEach((btn) => {
-            btn.addEventListener("click", function (e) {
-                e.preventDefault();
-                e.stopPropagation();
-
-                const subContainer = this.nextElementSibling; // .dropdown-sub-container
-                if (!subContainer) return;
-
-                const willOpen = !subContainer.classList.contains("block");
-
-                // 關閉同一個下拉內其他已展開的第三層
-                const parent = this.closest(".dropdown-container");
-                if (parent) {
-                    parent
-                        .querySelectorAll(".dropdown-sub-container")
-                        .forEach((p) => p.classList.remove("block"));
-                }
-
-                if (willOpen) {
-                    // 先還原預設向右狀態再顯示，才能正確量測是否超界
-                    subContainer.classList.remove("open-left");
-                    subContainer.classList.add("block");
-
-                    const rect = subContainer.getBoundingClientRect();
-                    if (rect.right > window.innerWidth) {
-                        subContainer.classList.add("open-left");
-                    }
-                }
-            });
-        });
-
-        // 點擊選單以外區域時，關閉所有桌面下拉
-        document.addEventListener("click", function (e) {
-            if (!desktopNav.contains(e.target)) {
-                closeAllDesktopDropdowns();
-            }
         });
     }
 });

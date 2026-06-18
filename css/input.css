@@ -251,6 +251,19 @@
         @apply left-auto right-full ml-0 mr-1;
     }
 
+    /* hover 顯示：滑入第一層按鈕時展開第二層下拉，並旋轉箭頭 */
+    .dropdown-btn:hover > .dropdown-container {
+        @apply block;
+    }
+    .dropdown-btn:hover .dropdown-icon {
+        @apply rotate-180;
+    }
+
+    /* hover 顯示：滑入第二層觸發項時展開第三層下拉 */
+    .desktop-sub-trigger:hover > .dropdown-sub-container {
+        @apply block;
+    }
+
     /* 手機版：第三層項目樣式 (背景加深一點) */
     .mobile-nav-third-item {
         @apply py-3 text-sm font-normal w-full text-center hover:bg-white/20 transition-colors ease-(--ease-standard) text-secondary;
